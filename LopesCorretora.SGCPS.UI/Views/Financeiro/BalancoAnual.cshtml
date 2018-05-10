@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Balanço Anual";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 class="h1Financeiro"> Balanço Anual </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2 class="h2Financeiro"> Relatório </h2>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <table class="table table-responsive" id="tabelaBalancoAnual">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="ColunaBalanco">Receitas</th>
+                        <th scope="col" class="ColunaBalanco">Mês</th>
+                        <th scope="col" class="ColunaBalanco">Valor</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Telefone</td>
+                        <td>janeiro</td>
+                        <td>R$200,00</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Clientes</td>
+                        <td>fevereiro</td>
+                        <td>R$200,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Clientes</td>
+                        <td>março</td>
+                        <td>R$300,00</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td class="tdTotal">Total:</td>
+                        <td class="tdTotal">R$700,00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span> R$ 5.000,00 (Entrada)</span>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+            <span> R$ 1.750,00 (Saida)</span>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+            <span> R$ 3.250,00 (Lucro)</span>
+        </div>
+    </div>
+    <div id="actions" class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+        </div>
+        <div id="actions" class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <button type="button" class="btn btn-default" id="botaoImprimir">Imprimir</button>
+            </div>
+        </div>
+    </div>

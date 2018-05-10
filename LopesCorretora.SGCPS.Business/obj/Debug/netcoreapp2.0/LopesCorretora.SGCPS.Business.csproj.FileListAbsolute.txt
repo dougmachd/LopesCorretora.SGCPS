@@ -1,0 +1,45 @@
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.deps.json
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.dll
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csprojResolveAssemblyReference.cache
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csproj.CoreCompileInputs.cache
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfoInputs.cache
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfo.cs
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+//Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.deps.json
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.dll
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csprojResolveAssemblyReference.cache
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csproj.CoreCompileInputs.cache
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfoInputs.cache
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfo.cs
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.deps.json
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.dll
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csprojResolveAssemblyReference.cache
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.csproj.CoreCompileInputs.cache
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfoInputs.cache
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.AssemblyInfo.cs
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.dll
+/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Business.pdb

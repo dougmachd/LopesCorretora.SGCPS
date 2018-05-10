@@ -1,0 +1,39 @@
+﻿@model LopesCorretora.SGCPS.ViewsModels.PlanosVM
+
+@{
+    ViewData["Title"] = "Lista de Planos de Saúde";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 class="h1ListaPlanos"> Lista de Planos </h1>
+        </div>
+    </div>
+    <div class="table-responsive center-block">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="ThListaPlanos">Plano</th>
+                    <th class="ThListaPlanos">Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ListPlanosMOD)
+                {
+                    <tr id="@item.Id" style="cursor:pointer" onclick="location.href = '/Plano/Alterar/@item.Id';">
+                        <td class="ListaPlanos">@item.Plano</td>
+                        <td class="ListaPlanos">@item.TelefoneDoPlano</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        @Html.ActionLink("Cadastrar", "Cadastrar", "Plano", null, new { @class="btn btn-default", id="buttonAjuda"})
+        @*<button type="button" class="btn btn-default" id="buttonAjuda"> Ajuda ao Corretor </button>*@
+    </div>
+</div>

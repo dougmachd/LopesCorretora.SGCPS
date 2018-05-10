@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 class="h1ListaPlanos"> Realizar Cadastro </h1>
+        </div>
+    </div>
+    <div class="centro">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                @Html.ActionLink("Pessoa Física", "Cadastrar", "PessoaFisica", null, new { @class = "btn btn-default", id = "btnPessoaFisica" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                @Html.ActionLink("Pessoa Jurídica", "Cadastrar", "PessoaJuridica", null, new { @class = "btn btn-default", id = "btnPessoaJuridica" })
+            </div>
+        </div>
+    </div>
+</div>

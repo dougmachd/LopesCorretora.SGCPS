@@ -1,0 +1,55 @@
+﻿@model LopesCorretora.SGCPS.Models.UsuarioMOD
+
+@{
+    ViewData["Title"] = "Alterar Corretor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Alterar", "Usuario", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <h1 class="h1Usuario"> Alterar - Cadastro de Usuário</h1>
+        <h2 class="h2Usuario"> Corretor </h2>
+        <div class="formCadastroCorretor">
+            @Html.Partial("_Errors")
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.HiddenFor(usuarioMOD => usuarioMOD.Id)
+                    @Html.LabelFor(usuarioMOD => usuarioMOD.Nome)
+                    @Html.TextBoxFor(usuarioMOD => usuarioMOD.Nome, new { id = "Nome", placeholder = "Nome do corretor", @class = "form-control input-md", required = "required" })
+                    @Html.ValidationMessageFor(usuarioMOD => usuarioMOD.Nome)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(usuarioMOD => usuarioMOD.CPF)
+                    @Html.TextBoxFor(usuarioMOD => usuarioMOD.CPF, new { id = "CPF", placeholder = "CPF do corretor", @class = "form-control input-md", required = "required" })
+                    @Html.ValidationMessageFor(usuarioMOD => usuarioMOD.CPF)
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(usuarioMOD => usuarioMOD.Email)
+                    @Html.TextBoxFor(usuarioMOD => usuarioMOD.Email, new { id = "EmailUsuario", placeholder = "E-mail do corretor", @class = "form-control input-md", required = "required" })
+                    @Html.ValidationMessageFor(usuarioMOD => usuarioMOD.Email)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(usuarioMOD => usuarioMOD.Celular)
+                    @Html.TextBoxFor(usuarioMOD => usuarioMOD.Celular, new { id = "Celular", placeholder = "Celular do corretor", @class = "form-control input-md", required = "required" })
+                    @Html.ValidationMessageFor(usuarioMOD => usuarioMOD.Celular)
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(usuarioMOD => usuarioMOD.Concessionario)
+                    @Html.TextBoxFor(usuarioMOD => usuarioMOD.Concessionario, new { id = "Concessionario", placeholder = "Concessionario", @class = "form-control input-md", required = "required" })
+                    @Html.ValidationMessageFor(usuarioMOD => usuarioMOD.Concessionario)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="idConfirmar"></label>
+                <div class="col-md-8" id="botoesCadastro">
+                    <button id="alterar" name="idCancelar" class="btn btn-default">Alterar</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}

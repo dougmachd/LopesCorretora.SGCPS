@@ -1,0 +1,35 @@
+﻿@model LopesCorretora.SGCPS.Models.PlanoMOD
+
+@{
+    ViewData["Title"] = "Cadastrar Plano de Saude";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <h1> Adicionar Planos </h1>
+    </div>
+</div>
+@Html.Partial("_Errors")
+@using (Html.BeginForm("Cadastrar", "Plano", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-xs-5 col-sm-5 col-md-5">
+            <div class="form-group">
+                @Html.LabelFor(planoMOD => planoMOD.Plano)
+                @Html.TextBoxFor(planoMOD => planoMOD.Plano, new { @class = "form-control", type = "text", id = "Plano", placeholder = "(Nome do plano.)" })
+                @Html.ValidationMessageFor(planoMOD => planoMOD.Plano, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-xs-5 col-sm-5 col-md-5">
+            <div class="form-group">
+                @Html.LabelFor(planoMOD => planoMOD.TelefoneDoPlano)
+                @Html.TextBoxFor(planoMOD => planoMOD.TelefoneDoPlano, new { @class = "form-control", type = "text", id = "TelefoneDoPlano", placeholder = "(Telefone do plano.)" })
+                @Html.ValidationMessageFor(planoMOD => planoMOD.TelefoneDoPlano, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1">
+            <button id="submitCadastrarPlano" style="margin-top: 25px" type="submit" class="btn btn-default"> Cadastrar </button>
+        </div>
+    </div>
+}

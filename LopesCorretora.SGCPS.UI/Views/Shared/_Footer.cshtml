@@ -1,0 +1,52 @@
+﻿<footer>
+    <div class="container">
+        <hr />
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-group btn-group-justified">
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Cadastro", "Cadastro", "Cliente", null, new { @class = "footerLinks", id = "CadastroFooter" })</p>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Comissoes", "Cadastrar", "Comissao", null, new { @class = "footerLinks", id = "CotadorNacionalFooter" })</p>
+            </div>
+        </div>
+
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Pesquisa", "Pesquisa", "Cliente", null, new { @class = "footerLinks", id = "PesquisaFooter" })</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "footerLinks", id = "FinanceiroFooter" })</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Usuario", "Cadastrar", "Usuario", null, new { @class = "footerLinks", id = "CriarUsuarioFooter" })</p>
+            </div>
+        </div>
+
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-4">
+                <p class="text-center"><a class="footerLinks" target="_blank" href="http://www.simuladorpersonalizado.com.br/">Cotação</a></p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Planos", "Listar", "Plano", null, new { @class = "footerLinks", id = "PlanosFooter" })</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><a class="footerLinks" target="_blank" href="http://www.dpwhite.com.br">DP White</a></p>
+            </div>
+        </div>
+
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-4">
+                <p class="text-center"><a class="footerLinks" target="_blank" href="https://calendar.google.com/calendar/">Agendamento</a></p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center footerParagraph">&copy; - Lopes Corretora</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center">@Html.ActionLink("Sair", "LogOut", "Acesso", null, new { @class = "footerLinks", id = "SairFooter" })</p>
+            </div>
+        </div>
+    </div>
+</footer>

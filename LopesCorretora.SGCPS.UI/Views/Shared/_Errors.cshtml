@@ -1,0 +1,10 @@
+﻿@if (ViewBag.Mensagem != null)
+{
+    <div id="divErro" class="row col-sm-12">
+        <div id="divMensagem" class="@ViewBag.Class" style="@ViewBag.Style; float:none;">
+            <span id="msgErro">
+                <b>@ViewBag.Mensagem</b>
+            </span>
+        </div>
+    </div>
+}

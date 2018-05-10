@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<body class="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="emptySpace"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1 class="h1Home"> Acessar Sistema </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <!--<hr id="linhaHome" />-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                @Html.ActionLink("Google", "Login","Acesso",null, new { @class= "btn btn-default", id = "BtnGoogle" })
+            </div>
+        </div>
+    </div>
+</body>

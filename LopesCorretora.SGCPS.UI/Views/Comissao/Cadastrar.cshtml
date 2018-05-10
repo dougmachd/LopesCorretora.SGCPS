@@ -1,0 +1,72 @@
+﻿@model LopesCorretora.SGCPS.ViewsModels.ComissaoVM
+
+@{
+    ViewData["Title"] = "Adicionar Comissão";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_Errors")
+@using (Html.BeginForm("Cadastrar", "Comissao", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 class="h1AdicionarPlanos"> Adicionar Comissão </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Plano.Plano)
+                @Html.DropDownListFor(comissaoVM => comissaoVM.ObjComissaoMOD.PlanoId, new SelectList((System.Collections.IEnumerable)Model.LisPlanosMOD, "Id", "Plano"), "Selecione", new { @class = "form-control", id = "Plano", size = "1", required = "required" })
+            </div>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.NumeroDaParcela)
+                @Html.TextBoxFor(comissaoVM => comissaoVM.ObjComissaoMOD.NumeroDaParcela, new { id = "NumeroParcela", @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Comissao)
+                @Html.TextBoxFor(comissaoVM => comissaoVM.ObjComissaoMOD.Comissao, new { id = "Comissao", @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <label for="TipoPlano"> Tipo de Plano: </label>
+            <ul>
+                <li>
+                    @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PF")
+                    @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PF")
+                </li>
+
+                <li>
+                    @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME")
+                    @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME")
+                </li>
+
+                <li>
+                    @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 03 até 29 vidas")
+                    @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 03 até 29 vidas")
+                </li>
+
+                <li>
+                    @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 30 até 99 vidas")
+                    @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 30 até 99 vidas")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <button type="submit" class="btn btn-default" id="btnAddComissao">Adicionar</button>
+    </div>
+}
+
+

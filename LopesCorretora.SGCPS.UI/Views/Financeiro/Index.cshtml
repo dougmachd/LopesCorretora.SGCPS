@@ -1,0 +1,30 @@
+﻿@model LopesCorretora.SGCPS.ViewsModels.AlterarPessoaFisicaVM
+@{
+    ViewData["Title"] = "Financeiro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 class="h1Financeiro"> Financeiro </h1>
+        </div>
+    </div>
+    <div class="row" id="opcoesFinanceiro">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            @Html.ActionLink("Balanco Mensal", "BalancoMensal", "Financeiro", null, new { @class = "btn btn-default", id= "BalancoMensal" })
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            @Html.ActionLink("Balanco Anual", "BalancoAnual", "Financeiro", null, new { @class = "btn btn-default", id = "BalancoAnual" })
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            @Html.ActionLink("Despesas", "ControleDeDespesas", "Financeiro", null, new { @class = "btn btn-default", id = "ControleDeDespesas" })
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            @Html.ActionLink("Dar Baixa", "DarBaixa", "Financeiro", null, new { @class = "btn btn-default", id = "DarBaixa" })
+        </div>
+    </div>
+</div>

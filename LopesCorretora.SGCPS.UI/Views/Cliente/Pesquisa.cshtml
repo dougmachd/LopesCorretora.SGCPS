@@ -1,0 +1,59 @@
+﻿@model LopesCorretora.SGCPS.ViewsModels.PesquisaClienteVM
+@{
+    ViewData["Title"] = "Pesquisa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="row ">
+        <div class="container">
+            <h1>Realizar Pesquisa</h1>
+            <hr class="shortHr">
+
+
+            @using (Html.BeginForm("Pesquisa", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-8 text-center">
+                    <p class="text-center"><input type="text" id="CaixaBusca" class="form-control CaixaBusca" name="q" placeholder="Pesquisar..." /></p>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p class="text-center"><button type="submit" class="btn btn-default buttonPesquisar" id=""> Pesquisar </button></p>
+                    </div>
+                </div>
+            }
+
+
+            <h2>Resultados</h2>
+            <hr class="shortHr">
+            @if (Model.ListModelPesquisa != null)
+            {
+                if (Model.ListModelPesquisa.Count > 0)
+                {
+                    @foreach (var client in Model.ListModelPesquisa)
+                    {
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@client.Nome</div>
+                            <div class="panel-body">
+                                <p>Observação: @client.Observacoes</p>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">Cpf/Cnpj: @client.Documento</li>
+                                <li class="list-group-item">Número do Contrato: @client.NumeroContrato</li>
+                                <li class="list-group-item">
+                                    <a href="" class="btn btn-large btn-default card-link">Dar Baixa</a>
+                                    @Html.ActionLink("Ver Mais", "Redirecionar", "Cliente", new { Id = client.Id, Tipo = client.Tipo  }, new { @class= "btn btn-large btn-default card-link", id="verMais" })
+                                    @Html.ActionLink("Download", "DownloadDocumento", "Cliente", new { client.Id, client.Tipo, client.DocumentoAnexo})
+                                </li> 
+                            </ul>
+                        </div>
+                    }
+                }
+                else
+                {
+                    @Html.Partial("_Errors")
+                }
+            }
+        </div>
+    </div>
+</section>
