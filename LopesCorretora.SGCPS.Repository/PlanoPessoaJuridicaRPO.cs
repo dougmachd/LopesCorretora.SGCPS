@@ -68,6 +68,21 @@ namespace LopesCorretora.SGCPS.Repository
             }
         }
 
+		public static PlanoPessoaJuridicaMOD Consultar(string NumeroContrato)
+        {
+            try
+            {
+                using (SGCPSContext context = new SGCPSContext())
+                {
+					return context.PlanosPessoasJuridicas.Where(x => x.NumeroContrato.Equals(NumeroContrato)).First();
+                }
+            }
+            catch (Exception)
+            {
+				return null;
+            }
+        }
+
         public static List<PlanoPessoaJuridicaMOD> Listar(int id)
         {
             try
@@ -81,6 +96,30 @@ namespace LopesCorretora.SGCPS.Repository
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public static PlanoPessoaJuridicaMOD Baixa(string descricao, PessoaJuridicaMOD pessoaJuridicaMOD = null)
+        {
+            try
+            {
+                if (pessoaJuridicaMOD == null)
+                {
+                    using (SGCPSContext context = new SGCPSContext())
+                    {
+                        return context.PlanosPessoasJuridicas.Where(x => x.NumeroContrato.Equals(descricao)).First();
+                    }
+                }
+                else
+                {
+                    //pessoaJuridicaMOD
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

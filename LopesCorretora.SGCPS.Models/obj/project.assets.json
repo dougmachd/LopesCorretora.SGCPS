@@ -664,28 +664,36 @@
     ]
   },
   "packageFolders": {
-    "/Users/douglasmachado/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\douglasmachado\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Models/LopesCorretora.SGCPS.Models.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Models\\LopesCorretora.SGCPS.Models.csproj",
       "projectName": "LopesCorretora.SGCPS.Models",
-      "projectPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Models/LopesCorretora.SGCPS.Models.csproj",
-      "packagesPath": "/Users/douglasmachado/.nuget/packages/",
-      "outputPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Models/obj",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Models\\LopesCorretora.SGCPS.Models.csproj",
+      "packagesPath": "C:\\Users\\douglasmachado\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/douglasmachado/.config/NuGet/NuGet.Config"
+        "C:\\Users\\douglasmachado\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -705,7 +713,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

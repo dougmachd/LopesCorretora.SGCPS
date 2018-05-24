@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>1d56c5c9-6103-4b05-80f3-21600104f583</UserSecretsId>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,5 +26,11 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="tsconfig.json" />
+    <Content Remove="Views\Shared\_PartialDarBaixaPf.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tsconfig.json" />
+    <None Include="Views\Shared\_PartialDarBaixaPf.cshtml" />
   </ItemGroup>
 </Project>

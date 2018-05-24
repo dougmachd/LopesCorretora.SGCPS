@@ -273,88 +273,85 @@
                 <h3> Dependentes </h3>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <button id="adicionarDependente" class="btn btn-default" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="form-dependente-1 multiCollapseExample2"> Adicionar dependente </button>
-            </div>
-        </div>
-        <div class="collapse multi-collapse" id="form-dependente-1">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <h4> Dependente 1 </h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        @Html.HiddenFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Id)
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome, new { @class = "form-control", type = "text", id = "NomeDependente", placeholder = "Nome.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF, new { @class = "form-control", type = "text", id = "CPFDependente", placeholder = "CPF.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG, new { @class = "form-control", type = "text", id = "RGDependente", placeholder = "RG.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG, "", new { @class = "text-danger" })
+        <div id="form-dependente-1">
+            @for (int i = 0; i < Model.LisDependentePessoaFisicaMOD.Count; i++)
+            {
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <h4> Dependente 1 </h4>
                     </div>
                 </div>
 
-                <div class="col-xs-2 col-sm-2 col-md-2">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento, new { @class = "form-control", type = "text", id = "DataDeNascimentoDependente", placeholder = "Data De Nascimento.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            @Html.HiddenFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].Id)
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].Nome)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].Nome, new { @class = "form-control", type = "text", id = "NomeDependente", placeholder = "Nome.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].Nome, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-2 col-sm-2 col-md-2">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco, new { @class = "form-control", type = "text", id = "GrauDeParentescoDependente", placeholder = "Grau De Parentesco.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].CPF)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].CPF, new { @class = "form-control", type = "text", id = "CPFDependente", placeholder = "CPF.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].CPF, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae, new { @class = "form-control", type = "text", id = "NomeDaMaeDependente", placeholder = "Nome Da Mae.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae, "", new { @class = "text-danger" })
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].RG)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].RG, new { @class = "form-control", type = "text", id = "RGDependente", placeholder = "RG.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].RG, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil)
-                        @Html.DropDownListFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, new SelectList
-                        (new[] { new { value = "casado", text = "Casado" }, new { value = "solteiro", text = "Solteiro" } }, "value", "text"),
-                        "Selecione", new { @class = "form-control", id = "EstadoCivilDependente", size = "1", required = "required" })
-                        @*@Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, "", new { @class = "text-danger" })*@
-                    </div>
-                </div>
 
-                <div class="col-xs-8 col-sm-8 col-md-8">
-                    <div class="form-group">
-                        @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS)
-                        @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS, new { @class = "form-control", type = "text", id = "NumeroDoSUSDependente", placeholder = "Numero Do SUS.", required = "required" })
-                        @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS, "", new { @class = "text-danger" })
+                    <div class="col-xs-2 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].DataDeNascimento)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].DataDeNascimento, new { @class = "form-control", type = "text", id = "DataDeNascimentoDependente", placeholder = "Data De Nascimento.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].DataDeNascimento, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].GrauDeParentesco)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].GrauDeParentesco, new { @class = "form-control", type = "text", id = "GrauDeParentescoDependente", placeholder = "Grau De Parentesco.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].GrauDeParentesco, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NomeDaMae)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NomeDaMae, new { @class = "form-control", type = "text", id = "NomeDaMaeDependente", placeholder = "Nome Da Mae.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NomeDaMae, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].EstadoCivil)
+                            @Html.DropDownListFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].EstadoCivil, new SelectList
+                            (new[] { new { value = "casado", text = "Casado" }, new { value = "solteiro", text = "Solteiro" } }, "value", "text"),
+                            "Selecione", new { @class = "form-control", id = "EstadoCivilDependente", size = "1", required = "required" })
+                            @*@Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].EstadoCivil, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+
+                    <div class="col-xs-8 col-sm-8 col-md-8">
+                        <div class="form-group">
+                            @Html.LabelFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NumeroDoSUS)
+                            @Html.TextBoxFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NumeroDoSUS, new { @class = "form-control", type = "text", id = "NumeroDoSUSDependente", placeholder = "Numero Do SUS.", required = "required" })
+                            @Html.ValidationMessageFor(alterarPessoaFisicaVM => alterarPessoaFisicaVM.LisDependentePessoaFisicaMOD[i].NumeroDoSUS, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
 
         <div id="actions" class="row">

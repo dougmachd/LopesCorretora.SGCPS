@@ -2,13 +2,6 @@
     cursor: pointer;
 }
 
-#btnAddComissao {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 210px;
-    height: 40px;
-}
 
 *,
 *:before *:after {
@@ -46,18 +39,79 @@ ul {
 }*/
 
 
+/*Inicio Menu navBar */
+
+body > nav {
+    border-radius: 0 !important;
+    height: 69px !important;
+    padding-top: 9px !important;
+}
+
+    body > nav > div > form > div > div > div {
+        display: none !important;
+    }
+
+    body > nav > div > div > a {
+        font-weight: 700 !important;
+        font-size: 27px !important;
+    }
+
+
+    body > nav > div > form > div > div > ul {
+        border-bottom: none !important;
+        display: inline-flex;
+        float: inherit;
+    }
+
+#ListaMenuNav > li.active > a {
+    color: #2B0009 !important;
+}
+
+#ListaMenuNav > li > a {
+    color: #dddddd !important;
+}
+
+    #ListaMenuNav > li > a:hover {
+        color: #2B0009 !important;
+        background-color: #ffffff !important;
+    }
+
+.nav-tabs > li > a {
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+/*dropdown menu */
+#dropdownMenuButton {
+    background-color: transparent;
+    padding: 10px 12px !important;
+    color: #dddddd;
+}
+
+    #dropdownMenuButton:hover {
+        background-color: #fff;
+        color: #2B0009;
+    }
+
+.dropdown-menu > li > a:hover {
+    background-color: #2B0009;
+    color: #dddddd;
+}
+
+/*Fim Menu navBar */
+
+
 /*Inicio troca de cores*/
 body {
-    background-color: #eaedf0 !important;
+    background-color: #EAEAEA !important;
 }
 
     body > nav {
-        background-color: #103168 !important;
+        background-color: #2B0009 !important;
         border-color: #aeaeae !important;
     }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
-    color: #d2d4d6 !important;
+    color: #DDDDDD !important;
 }
 
 
@@ -66,19 +120,35 @@ body > div > div > div > h1,
 body > div > div > div > h2,
 body > div > div > div > h3,
 #form-dependente-1 > div > div > h4 {
-    color: #103168;
+    color: #2B0009;
 }
 
 input.form-control, textarea#observacoes.form-control {
-    border-color: #103168 !important;
+    /*border-color: #2B0009!important;*/
 }
 
 .btn-default {
-    border-color: #103168 !important;
-    color: #103168 !important;
+    border-color: #2B0009 !important;
+    color: #2B0009 !important;
 }
 
 /*fim troca de cores*/
+
+/*FONTES*/
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.p,
+.a {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*FIM FONTES*/
 
 /* CSS PESSOA FISICA, ALTERAR PESSOA FISICA, PESSOA JURIDICA, ALTERAR PESSOA JURIDICA*/
 
@@ -88,7 +158,7 @@ input.form-control, textarea#observacoes.form-control {
 }
 
 .h2Cadastro {
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 373px;
     padding-bottom: 10px;
     font-size: 23px;
@@ -190,7 +260,7 @@ input.form-control, textarea#observacoes.form-control {
 .h1Financeiro {
     font-weight: 600;
     font-size: 32px;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 368px;
     padding-bottom: 10px;
 }
@@ -198,7 +268,7 @@ input.form-control, textarea#observacoes.form-control {
 .h2Financeiro {
     font-size: 22px;
     font-weight: bold;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 1140px;
     padding-bottom: 5px;
 }
@@ -206,7 +276,7 @@ input.form-control, textarea#observacoes.form-control {
 .h1FinanceiroControle {
     font-size: 32px !important;
     font-weight: bold;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 340px;
     padding-bottom: 15px;
     margin-bottom: 25px;
@@ -230,18 +300,18 @@ input.form-control, textarea#observacoes.form-control {
 .h4TipoDespesa {
     font-weight: 700;
     font-size: 20px;
-    border-bottom: 2px solid #103168;
+    border-bottom: 2px solid #2B0009;
     padding-bottom: 10px;
-    color: #103168;
+    color: #2B0009;
 }
 
 
 #tabelaBalancoAnual {
-    color: #103168;
+    color: #2B0009;
 }
 
 #tabelaBalancoMensal {
-    color: #103168;
+    color: #2B0009;
 }
 
 /*Botao add + Controle financeiro*/
@@ -286,24 +356,24 @@ input.form-control, textarea#observacoes.form-control {
 }
 
 .despesas {
-    color: #103168;
+    color: #2B0009;
 }
 
 /*labels do subsistema financeiro dar Baixa*/
 .labelDarBaixa {
     font-weight: 500 !important;
     font-size: 16px;
-    color: #103168;
+    color: #2B0009;
 }
 
 /* parágrafo do subsistema financeiro dar baixa */
 #pDarBaixa {
     font-size: 18px;
-    color: #103168;
+    color: #2B0009;
 }
 
 #tabelaDarBaixa {
-    color: #103168;
+    color: #2B0009;
 }
 
 #buttonBaixa {
@@ -348,16 +418,17 @@ input.form-control, textarea#observacoes.form-control {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 95px;
+    height: 45px;
+    width: 175px;
 }
 
 .emptySpace {
     height: 310px;
 }
 
-/*#linhaHome {
+#linhaHome {
     width: 350px;
-}*/
+}
 
 /*DASH*/
 .Menu {
@@ -367,14 +438,17 @@ input.form-control, textarea#observacoes.form-control {
 
 .h1Dash {
     width: 350px;
-    color: #103168;
+    color: #2B0009;
     font-size: 25px;
     font-weight: 600;
 }
 
 .Compromissos {
-    float: right;
-    width: 50%;
+    /*float: right;*/
+    /*width: 50%;*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #btnMenu {
@@ -395,14 +469,16 @@ input.form-control, textarea#observacoes.form-control {
 #BtnEditar, #BtnExcluir {
     width: 62px;
     height: 31px;
+    float: right;
+    margin-left: 7px;
 }
 
 #ThHorario, #ThDescricao {
-    color: #103168;
+    color: #2B0009;
 }
 
 #TabelaCompromissos {
-    width: 520px;
+    width: 100%;
 }
 
 
@@ -411,7 +487,7 @@ input.form-control, textarea#observacoes.form-control {
 .h1Busca {
     font-weight: 600;
     padding-bottom: 10px;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 350px;
 }
 
@@ -421,7 +497,7 @@ input.form-control, textarea#observacoes.form-control {
     display: block;
     width: 150px;
     height: 38px;
-    color: #103168;
+    color: #2B0009;
 }
 
 #campoBusca {
@@ -434,12 +510,12 @@ input.form-control, textarea#observacoes.form-control {
 .h1BuscaResultados {
     font-weight: 600;
     padding-bottom: 10px;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 450px;
 }
 
 #Resultados {
-    background: #d2d4d6;
+    background: #DDDDDD;
     padding-bottom: 10px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -451,13 +527,13 @@ input.form-control, textarea#observacoes.form-control {
     display: block;
     width: 150px;
     height: 38px;
-    color: #103168;
+    color: #2B0009;
 }
 
 #h5BuscaResultados {
     font-size: 20px;
     font-weight: 600;
-    color: #103168;
+    color: #2B0009;
 }
 
 #pResultadosBusca {
@@ -511,11 +587,11 @@ li.sizeOfList a {
 }
 
 #ThHorario, #ThDescricao {
-    color: #103168;
+    color: #2B0009;
 }
 
 #TabelaCompromissos {
-    width: 520px;
+    width: 100% !important;
 }
 
 
@@ -524,7 +600,7 @@ li.sizeOfList a {
 .h1Busca {
     font-weight: 600;
     padding-bottom: 10px;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 350px;
 }
 
@@ -534,7 +610,7 @@ li.sizeOfList a {
     display: block;
     width: 150px;
     height: 38px;
-    color: #103168;
+    color: #2B0009;
 }
 
 #campoBusca {
@@ -547,12 +623,12 @@ li.sizeOfList a {
 .h1BuscaResultados {
     font-weight: 600;
     padding-bottom: 10px;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 450px;
 }
 
 #Resultados {
-    background: #d2d4d6;
+    background: #DDDDDD;
     padding-bottom: 10px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -564,13 +640,13 @@ li.sizeOfList a {
     display: block;
     width: 150px;
     height: 38px;
-    color: #103168;
+    color: #2B0009;
 }
 
 #h5BuscaResultados {
     font-size: 20px;
     font-weight: 600;
-    color: #103168;
+    color: #2B0009;
 }
 
 #pResultadosBusca {
@@ -593,7 +669,7 @@ li.sizeOfList a {
     margin-top: 20px;
     margin-left: 12%;
     margin-right: 5%;
-    color: #103168;
+    color: #2B0009;
 }
 
 .ListaPlanos {
@@ -602,7 +678,7 @@ li.sizeOfList a {
     font-size: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #103168;
+    color: #2B0009;
     font-weight: 400;
 }
 
@@ -639,7 +715,7 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
     width: 200px;
     font-size: 18px;
     height: 60px;
-    background-color: #103168;
+    background-color: #2B0009;
     color: #fff !important;
     display: block;
     margin-right: auto;
@@ -651,7 +727,7 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
     width: 200px;
     font-size: 18px;
     height: 60px;
-    background-color: #103168;
+    background-color: #2B0009;
     color: #fff !important;
     display: block;
     margin-right: auto;
@@ -673,11 +749,11 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
 .h1Usuario {
     font-weight: 600;
     font-size: 35px;
-    color: #103168;
+    color: #2B0009;
 }
 
 .h2Usuario {
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 373px;
     padding-bottom: 10px;
     font-size: 23px;
@@ -702,7 +778,7 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
 .h1AdicionarPlanos {
     font-weight: 700 !important;
     font-size: 35px !important;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 373px;
     padding-bottom: 10px;
 }
@@ -718,7 +794,7 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
 .h1AlterarPlanos {
     font-weight: 700 !important;
     font-size: 35px !important;
-    border-bottom: 1px solid #d2d4d6;
+    border-bottom: 1px solid #DDDDDD;
     width: 373px;
     padding-bottom: 10px;
 }
@@ -728,3 +804,13 @@ th.ThListaPlanos, th.ListaPlanos, td.ListaPlanos {
     width: 80%;
 }
 /*fim alterar planos*/
+
+/*Inicio Pagina add comissão*/
+#btnAddComissao {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 210px;
+    height: 40px;
+}
+/*Fim Pagina add comissão*/

@@ -1,10 +1,18 @@
-﻿// Write your JavaScript code.
+﻿/* Write your JavaScript code.*/
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
 
-// Inicio JS Tela = PJ
-// Botao adicionar/remover do cadastro de PJ para end. correspondencia
+/* Inicio JS Tela = PJ*/
+/* Botao adicionar/remover do cadastro de PJ para end. correspondencia*/
 function EnderecoCorrespondencia(e) {
     var btn = document.getElementById("btnEnderecoCorrespondencia");
-    if (e == "mais") {
+    if (e === "mais") {
         document.getElementById("EnderecoCorrespondencia").style.display = "";
         var funcaoMenos = "EnderecoCorrespondencia('menos')";
         btn.setAttribute('onclick', funcaoMenos);
@@ -17,7 +25,7 @@ function EnderecoCorrespondencia(e) {
     }
 }
 
-// Preenche os campos de endereco obtidos pelo cep na tela de cadastro de PJ
+/* Preenche os campos de endereco obtidos pelo cep na tela de cadastro de PJ*/
 function GetCepPj(e) {
     $.ajax({
         type: "GET",
@@ -28,8 +36,8 @@ function GetCepPj(e) {
         assync: true,
         success: function (data) {
             var parsed = JSON.parse(data);
-            if (parsed.erro != true) {
-                if (e == "fiscal") {
+            if (parsed.erro !== true) {
+                if (e === "fiscal") {
                     document.getElementById("UF").value = parsed.uf;
                     document.getElementById("Rua").value = parsed.logradouro;
                     document.getElementById("Bairro").value = parsed.bairro;
@@ -52,12 +60,41 @@ function GetCepPj(e) {
 
 // Adiciona campos necessarios para mais um plano na tela de cadastro PJ
 function AcrescentarPlano(e) {
-
+    var e = document.getElementById('hiddenQtdDePlanos').value;
+    $("#planos")
+        .append(
+        " <div id='plano_" + e + "'  class='row'> " +
+        "     <div class='col-xs-4 col-sm-4 col-md-4'> " +
+        "         <div class='form-group'> " +
+        "             <label for='ListPlanoPessoaJuridicaMOD_0__NumeroDeBeneficiarios'>Numero De Beneficiarios</label> " +
+        "             <input class='form-control' data-val='true' data-val-required='* Campo obrigatorio' id='NumeroDeBeneficiarios' name='NumeroDeBeneficiarios' placeholder='NumeroDoBeneficiarios.' type='text' value='' /> " +
+        "             <span class='field-validation-valid text-danger' data-valmsg-for='ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios' data-valmsg-replace='true'></span> " +
+        "         </div> " +
+        "     </div> " +
+        "     <div class='col-xs-6 col-sm-6 col-md-6'> " +
+        "         <div class='form-group'> " +
+        "             <label for='ListPlanoPessoaJuridicaMOD_0__PlanoId'>Plano</label> " +
+        "             <select class='form-control' data-val='true' data-val-required='The PlanoId field is required.' id='IdPlanoPessoaJuridica' name='PlanoId' size='1'><option value=''>Selecione</option> " +
+        "                 <option value='1'>Unimed</option> " +
+        "             </select> " +
+        "             <span class='field-validation-valid text-danger' data-valmsg-for='ListPlanoPessoaJuridicaMOD[0].PlanoId' data-valmsg-replace='true'></span> " +
+        "         </div> " +
+        "     </div> " +
+        "     <div class='col-xs-1 col-sm-1 col-md-1'> " +
+        "         <span style='cursor:pointer; margin-top: 45%' id='btnRemoverPlano' onclick='RemoverPlano(plano_" + e + ")' class='glyphicon glyphicon-minus' />" +
+        "     </div> " +
+        " </div> ");
+    document.getElementById('hiddenQtdDePlanos').value++;
 }
-// Fim JS Tela = PJ
 
-// Inicio JS Tela = PF
-// Preenche os campos de endereco obtidos pelo cep na tela de cadastro de PF
+function RemoverPlano(id) {
+    $(id).remove();
+}
+
+/* Fim JS Tela = PJ*/
+
+/* Inicio JS Tela = PF*/
+/* Preenche os campos de endereco obtidos pelo cep na tela de cadastro de PF*/
 function GetCepPf() {
     $.ajax({
         type: "GET",
@@ -68,7 +105,7 @@ function GetCepPf() {
         assync: true,
         success: function (data) {
             var parsed = JSON.parse(data);
-            if (parsed.erro != true) {
+            if (parsed.erro !== true) {
                 document.getElementById("UF").value = parsed.uf;
                 document.getElementById("Rua").value = parsed.logradouro;
                 document.getElementById("Bairro").value = parsed.bairro;
@@ -83,11 +120,33 @@ function GetCepPf() {
     })
 }
 
-function AdicionarDependente(id) {
+function AdicionarDependentes() {
+    var QuantidadeDeDependentes = parseInt(document.getElementById("QuantidadeDeDependentes").value);
+    var hiddenQtdDependentes = parseInt(document.getElementById("hiddenQtdDependentes").value);
+
+    if (QuantidadeDeDependentes > hiddenQtdDependentes) {
+        for (var i = hiddenQtdDependentes; i < QuantidadeDeDependentes; i++) {
+            innerDeDependente(i);
+            document.getElementById('hiddenQtdDependentes').value = QuantidadeDeDependentes;
+        }
+    } else if (QuantidadeDeDependentes < hiddenQtdDependentes && QuantidadeDeDependentes >= 0) {
+        for (var i = QuantidadeDeDependentes; i < hiddenQtdDependentes; i++) {
+            RemoverDependente(document.getElementById("dependente_" + i));
+            document.getElementById('hiddenQtdDependentes').value = QuantidadeDeDependentes;
+        }
+    } else {
+        for (var i = 0; i < hiddenQtdDependentes; i++) {
+            RemoverDependente(document.getElementById("dependente_" + i));
+            document.getElementById('hiddenQtdDependentes').value = 0;
+        }
+    }
+}
+
+function innerDeDependente(id) {
     $("#form-dependente-1")
-        .append("<div id='dependente_" + id + "'>" +
+        .append("<div style='display: block' id='dependente_" + id + "'>" +
         "        <div class='col-xs-12 col-sm-12 col-md-12'> " +
-        "            <h4> Dependente 1 </h4> <span style='cursor:pointer' id='btnRemoverDependente" + id + "' onclick='RemoverDependente(dependente_" + id + ")' class='glyphicon glyphicon-minus' /> " +
+        "            <h4> Dependente " + (parseInt(id) + 1) + " </h4> " +
         "        </div> " +
         "    <div class='row'> " +
         "        <div class='col-xs-12 col-sm-12 col-md-12'> " +
@@ -109,14 +168,14 @@ function AdicionarDependente(id) {
         "        <div class='col-xs-4 col-sm-4 col-md-4'> " +
         "            <div class='form-group'> " +
         "                <label for='LisDependentePessoaFisicaMOD_" + id + "__RG'>RG</label> " +
-        "                <input class='form-control' id='RGDependente' name='LisDependentePessoaFisicaMOD[" + id + "].RG' placeholder='RG.' required='required' type='text' value='' /> " +
+        "                <input class='form-control' id='RGDependente" + id + "' name='LisDependentePessoaFisicaMOD[" + id + "].RG' placeholder='RG.' required='required' type='text' value='' /> " +
         "                <span class='field-validation-valid text-danger' data-valmsg-for='LisDependentePessoaFisicaMOD[" + id + "].RG' data-valmsg-replace='true'></span> " +
         "            </div> " +
         "        </div> " +
         "        <div class='col-xs-2 col-sm-2 col-md-2'> " +
         "            <div class='form-group'> " +
         "                <label for='LisDependentePessoaFisicaMOD" + id + "DataDeNascimento'>Data de nascimento</label> " +
-        "                <input class='form-control' data-val='true' data-val-required='Campo obrigatorio' id='DataDeNascimentoDependente' name='LisDependentePessoaFisicaMOD[" + id + "].DataDeNascimento' placeholder='Data De Nascimento.' required='required' type='text' value='' /> " +
+        "                <input class='form-control' data-val='true' data-val-required='Campo obrigatorio' id='DataDeNascimentoDependente" + id + "' name='LisDependentePessoaFisicaMOD[" + id + "].DataDeNascimento' placeholder='Data De Nascimento.' required='required' type='text' value='' /> " +
         "                <span class='field-validation-valid text-danger' data-valmsg-for='LisDependentePessoaFisicaMOD" + id + ".DataDeNascimento' data-valmsg-replace='true'></span> " +
         "            </div> " +
         "        </div> " +
@@ -157,29 +216,21 @@ function AdicionarDependente(id) {
         "        </div> " +
         "    </div> " +
         "</div>");
-    SetProximoDependente(id);
 }
 
-function RemoverDependente(id) {
-    var a = "dependente_" + id;
-    var element = document.getElementById(a).value;
-    element.innerHTML = "";
+function RemoverDependente(elem) {
+    $(elem).remove();
 }
 
-//function SetRemocao(id) {
-//    var nome = "RemoverDependente(form-dependente-" + id + ")";
-//    var mudar = document.getElementById('btnRemoverDependente');
-//    mudar.setAttribute('onclick', nome);
-//}
-
-function SetProximoDependente(id) {
-    var nome = "AdicionarDependente(" + id + ")";
-    var mudar = document.getElementById('adicionarDependente');
-    mudar.setAttribute('onclick', nome);
+function SplitId(nome) {
+    var removido = -1;
+    for (var i = 11; i < nome.length; i++) {
+        removido = nome[i];
+    }
+    return removido;
 }
 
-
-//alert de confirmacao de eclusao pessoa fisica
+/* alert de confirmacao de eclusao pessoa fisica*/
 function ExcluirPJ() {
     bootbox.confirm({
         size: "small",
@@ -191,4 +242,99 @@ function ExcluirPJ() {
             }
         }
     })
+}
+
+function mtdAddRowDespesa() {
+    var Tipo = document.getElementById('Tipo').value;
+    var Valor = document.getElementById('Valor').value;
+    var Data = document.getElementById('Data').value;
+
+    $("#TabelaDespesas").append("<tr id= 'tr1' > " +
+        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='Tipos' type='hidden' value='" + Tipo + "'> " +
+        Tipo +
+        "                   </td> " +
+        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='Valores' type='hidden' value='" + Valor + "'> " +
+        Valor +
+        "                   </td> " +
+        "                   <td class='col-lg-3 col-md-3 col-sm-3'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='Datas' type='hidden' value='" + Data + "'> " +
+        Data +
+        "                   </td> " +
+        "                   <td class='col-lg-1 col-md-1 col-sm-1'> " +
+        "                       <span style='cursor:pointer' name='btnRemover' id='btnRemover1' onclick='mtdRemoveRowDespesa('tr1')' class='glyphicon glyphicon-remove-circle'></span>" +
+        "                   </td> " +
+        "               </tr> ");
+    mtdOrganizarIDsTabelaDespesas();
+}
+
+//tela de cadatro de maquina (remove um campo de inserção de sofware)
+function mtdRemoveRowDespesa(idTr) {
+    var indice = "";
+    for (var i = 2; i < idTr.length; i++) {
+        indice += idTr[i];
+    }
+    document.getElementById('TabelaDespesas').deleteRow(indice);
+    mtdOrganizarIDsTabelaDespesas();
+}
+
+function mtdOrganizarIDsTabelaDespesas() {
+    var linhas = document.getElementById('TabelaDespesas').rows;
+    var botoes = document.getElementsByName('btnRemover');
+
+    for (var i = 0; i < botoes.length; i++) {
+        var mtdRemove = "mtdRemoveRowDespesa('tr" + (i + 1) + "')";
+        botoes[i].setAttribute('onclick', mtdRemove);
+    }
+
+    for (var i = 0; i < linhas.length; i++) {
+        linhas[i].id = "tr" + i;
+    }
+    return (linhas.length + 1)
+}
+
+function mtdAddRowComissao() {
+    var Tipo = document.getElementById('Tipo').value;
+    var Comissao = document.getElementById('Comissao').value;
+    var NumeroDaParcela = document.getElementById('NumeroDaParcela').value;
+
+    $("#TabelaComissoes").append("<tr id='tr0' > " +
+        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='Tipos' type='hidden' value='" + Tipo + "'> " +
+        Tipo +
+        "                   </td> " +
+        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='NumeroDaParcela' type='hidden' value='" + NumeroDaParcela + "'> " +
+        NumeroDaParcela +
+        "                   </td> " +
+        "                   <td class='col-lg-3 col-md-3 col-sm-3'> " +
+        "                       <input data-val='true' data-val-required='The Id field is required.' name='Comissao' type='hidden' value='" + Comissao + "'> " +
+        Comissao +
+        "                   </td> " +
+        "                   <td class='col-lg-1 col-md-1 col-sm-1'> " +
+        "                       <span style='cursor:pointer' name='btnRemoverComissao' id='btnRemoverComissao' onclick='mtdRemoveRowComissao('tr0')' class='glyphicon glyphicon-remove-circle'></span>" +
+        "                   </td> " +
+        "               </tr> ");
+    mtdOrganizarIDsTabelaComissao();
+}
+
+function mtdOrganizarIDsTabelaComissao() {
+    var linhas = document.getElementById('TabelaComissoes').rows;
+    var botoes = document.getElementsByName('btnRemoverComissao');
+
+    for (var i = 0; i < botoes.length; i++) {
+        var mtdRemove = "mtdRemoveRowComissao('tr" + (i + 1) + "')";
+        botoes[i].setAttribute('onclick', mtdRemove);
+    }
+
+    for (var i = 0; i < linhas.length; i++) {
+        linhas[i].id = "tr" + i;
+    }
+    return (linhas.length + 1)
+}
+
+function mtdRemoveRowComissao(idTr) {
+    $(document.getElementById(idTr)).remove();
+    mtdOrganizarIDsTabelaComissao();
 }

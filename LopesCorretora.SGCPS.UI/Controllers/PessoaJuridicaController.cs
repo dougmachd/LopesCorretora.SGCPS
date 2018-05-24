@@ -5,6 +5,7 @@ using LopesCorretora.SGCPS.ViewsModels;
 using Microsoft.AspNetCore.Http;
 using LopesCorretora.SGCPS.UI.Filtros;
 using System.IO;
+using System.Collections.Generic;
 
 namespace LopesCorretora.SGCPS.UI.Controllers
 {
@@ -31,7 +32,8 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM, IFormFile anexo)
+        public IActionResult Cadastrar(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM, IFormFile anexo,
+            List<int> NumeroDeBeneficiarios = null, List<int> PlanoId = null)
         {
             if (ModelState.IsValid)
             {
@@ -75,8 +77,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
                     ViewBag.Style = "display:block; text-align:center; margin-top: 5%";
                     ViewBag.Class = "alert alert-success";
                     #endregion
-
-                    return View(PessoaJuridicaBUS.CadastrarPessoaJuridica(cadastrarPessoaJuridicaVM));
+                    return View(PessoaJuridicaBUS.CadastrarPessoaJuridica(cadastrarPessoaJuridicaVM, NumeroDeBeneficiarios, PlanoId));
                 }
                 catch (Exception)
                 {
@@ -100,6 +101,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         }
         #endregion
 
+        #region Alterar
         [HttpGet]
         public IActionResult Alterar(int Id)
         {
@@ -196,5 +198,6 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             }
             return View(alterarPessoaJuridicaVM);
         }
+        #endregion
     }
 }

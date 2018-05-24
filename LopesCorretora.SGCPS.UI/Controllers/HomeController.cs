@@ -10,6 +10,8 @@ using Google.Apis.Services;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Authorization;
+using Google.Apis.Calendar.v3.Data;
+using System;
 
 namespace LopesCorretora.SGCPS.UI.Controllers
 {
@@ -22,6 +24,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             return View();
         }
 
+        
         public IActionResult Home()
         {
             return View();

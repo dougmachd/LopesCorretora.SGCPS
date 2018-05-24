@@ -9,8 +9,6 @@
         <div class="container">
             <h1>Realizar Pesquisa</h1>
             <hr class="shortHr">
-
-
             @using (Html.BeginForm("Pesquisa", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 <div class="col-md-8 text-center">
@@ -22,32 +20,59 @@
                     </div>
                 </div>
             }
-
-
             <h2>Resultados</h2>
             <hr class="shortHr">
             @if (Model.ListModelPesquisa != null)
             {
                 if (Model.ListModelPesquisa.Count > 0)
                 {
-                    @foreach (var client in Model.ListModelPesquisa)
-                    {
-                        <div class="panel panel-default">
-                            <div class="panel-heading">@client.Nome</div>
-                            <div class="panel-body">
-                                <p>Observação: @client.Observacoes</p>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">Cpf/Cnpj: @client.Documento</li>
-                                <li class="list-group-item">Número do Contrato: @client.NumeroContrato</li>
-                                <li class="list-group-item">
-                                    <a href="" class="btn btn-large btn-default card-link">Dar Baixa</a>
-                                    @Html.ActionLink("Ver Mais", "Redirecionar", "Cliente", new { Id = client.Id, Tipo = client.Tipo  }, new { @class= "btn btn-large btn-default card-link", id="verMais" })
-                                    @Html.ActionLink("Download", "DownloadDocumento", "Cliente", new { client.Id, client.Tipo, client.DocumentoAnexo})
-                                </li> 
-                            </ul>
-                        </div>
-                    }
+                    #region comentado
+                    @*@foreach (var client in Model.ListModelPesquisa)
+                        {
+                            <div class="panel panel-default">
+                                    <div class="panel-heading">@client.Nome</div>
+                                    <div class="panel-body">
+                                        <p>Observação: @client.Observacoes</p>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Cpf/Cnpj: @client.Documento</li>
+                                        <li class="list-group-item">Número do Contrato: @client.NumeroContrato</li>
+                                        <li class="list-group-item">
+                                            <a href="" class="btn btn-large btn-default card-link">Dar Baixa</a>
+                                            @Html.ActionLink("Ver Mais", "Redirecionar", "Cliente", new { Id = client.Id, Tipo = client.Tipo  }, new { @class= "btn btn-large btn-default card-link", id="verMais" })
+                                            @Html.ActionLink("Download", "DownloadDocumento", "Cliente", new { client.Id, client.Tipo, client.DocumentoAnexo})
+                                        </li>
+                                    </ul>
+                                </div>
+                        }*@
+                    #endregion
+                    <div style="padding:0px;background-color:#ececec; max-height:525px;margin-bottom:0px; overflow: scroll;">
+                        <table class="table table-hover" style="max-height:300px; overflow: auto">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-3 col-md-3 col-sm-3">Nome</th>
+                                    <th class="col-lg-3 col-md-3 col-sm-3">Observacoes</th>
+                                    <th class="col-lg-2 col-md-2 col-sm-2">Cpf/Cnpj</th>
+                                    <th class="col-lg-2 col-md-2 col-sm-2">Numero do contrato</th>
+                                    <th class="col-lg-1 col-md-1 col-sm-1"></th>
+                                    <th class="col-lg-1 col-md-1 col-sm-1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var client in Model.ListModelPesquisa)
+                                {
+                                    <tr onclick="location.href='Redirecionar?Id=@client.Id&Tipo=@client.Tipo'">
+                                        <td class="col-lg-3 col-md-3 col-sm-3">@client.Nome</td>
+                                        <td class="col-lg-3 col-md-3 col-sm-3">@client.Observacoes</td>
+                                        <td class="col-lg-2 col-md-2 col-sm-2">@client.Documento</td>
+                                        <td class="col-lg-2 col-md-2 col-sm-2">@client.NumeroContrato</td>
+                                        <td class="col-lg-1 col-md-1 col-sm-1">@Html.ActionLink("Dar Baixa", "DarBaixa", "Financeiro", new { NumeroDoContrato = client.NumeroContrato }, new { @class = "btn btn-large btn-default card-link", id = "verMais" })</td>
+                                        <td class="col-lg-1 col-md-1 col-sm-1">@Html.ActionLink("Download", "DownloadDocumento", "Cliente", new { client.Id, client.Tipo, client.DocumentoAnexo })</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 }
                 else
                 {

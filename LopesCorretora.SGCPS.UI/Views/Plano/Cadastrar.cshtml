@@ -13,23 +13,88 @@
 @using (Html.BeginForm("Cadastrar", "Plano", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="row">
-        <div class="col-xs-5 col-sm-5 col-md-5">
-            <div class="form-group">
-                @Html.LabelFor(planoMOD => planoMOD.Plano)
-                @Html.TextBoxFor(planoMOD => planoMOD.Plano, new { @class = "form-control", type = "text", id = "Plano", placeholder = "(Nome do plano.)" })
-                @Html.ValidationMessageFor(planoMOD => planoMOD.Plano, "", new { @class = "text-danger" })
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(planoMOD => planoMOD.Plano)
+                        @Html.TextBoxFor(planoMOD => planoMOD.Plano, new { @class = "form-control", type = "text", id = "Plano", placeholder = "(Nome do plano.)" })
+                        @Html.ValidationMessageFor(planoMOD => planoMOD.Plano, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(planoMOD => planoMOD.TelefoneDoPlano)
+                        @Html.TextBoxFor(planoMOD => planoMOD.TelefoneDoPlano, new { @class = "form-control", type = "text", id = "TelefoneDoPlano", placeholder = "(Telefone do plano.)" })
+                        @Html.ValidationMessageFor(planoMOD => planoMOD.TelefoneDoPlano, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label for="NumeroDaParcela" name="labNumeroDaParcela">Numero da parcela</label>
+                        <input class="form-control" type="text" name="NumeroDaParcela" id="NumeroDaParcela" />
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label for="Comissao" name="labComissao">Comissao</label>
+                        <input class="form-control" type="text" name="Comissao" id="Comissao" />
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="col-xs-5 col-sm-5 col-md-5">
-            <div class="form-group">
-                @Html.LabelFor(planoMOD => planoMOD.TelefoneDoPlano)
-                @Html.TextBoxFor(planoMOD => planoMOD.TelefoneDoPlano, new { @class = "form-control", type = "text", id = "TelefoneDoPlano", placeholder = "(Telefone do plano.)" })
-                @Html.ValidationMessageFor(planoMOD => planoMOD.TelefoneDoPlano, "", new { @class = "text-danger" })
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="col-xs-9 col-sm-9 col-md-9">
+                <label for="TipoPlano"> Tipo de Plano: </label>
+                <ul>
+                    <li>
+                        <input type="radio" name="Tipo" id="Tipo" value="PF" />
+                        <label for="Tipo" name="labTipo">PF</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="Tipo" id="Tipo" value="PME" />
+                        <label for="Tipo" name="labTipo">PME</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="Tipo" id="Tipo" value="PME de 03 até 29 vidas" />
+                        <label for="Tipo" name="labTipo">PME de 03 até 29 vidas</label>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="Tipo" id="Tipo" value="PME de 30 até 99 vidas" />
+                        <label for="Tipo" name="labTipo">PME de 30 até 99 vidas</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 pull-right">
+                <button onclick="mtdAddRowComissao()" style="margin-top: 25px" type="button" class="btn btn-default"> Adicionar + </button>
             </div>
         </div>
-        <div class="col-xs-1 col-sm-1 col-md-1">
-            <button id="submitCadastrarPlano" style="margin-top: 25px" type="submit" class="btn btn-default"> Cadastrar </button>
-        </div>
+    </div>
+
+    <table id="TabelaComissoes" class="table table-hover">
+        <thead>
+            <tr>
+                <th class="col-lg-4 col-md-4 col-sm-4">Tipo</th>
+                <th class="col-lg-4 col-md-4 col-sm-4">Numero da parcela</th>
+                <th class="col-lg-3 col-md-3 col-sm-3">Comissao</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div class="col-xs-1 col-sm-1 col-md-1 pull-right">
+        <button id="submitCadastrarPlano" style="margin-top: 25px" type="submit" class="btn btn-default"> Cadastrar </button>
     </div>
 }

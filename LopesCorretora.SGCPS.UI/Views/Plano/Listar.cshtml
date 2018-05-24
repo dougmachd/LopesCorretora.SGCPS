@@ -20,12 +20,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.ListPlanosMOD)
+                @if (Model.ListPlanosMOD != null)
                 {
-                    <tr id="@item.Id" style="cursor:pointer" onclick="location.href = '/Plano/Alterar/@item.Id';">
-                        <td class="ListaPlanos">@item.Plano</td>
-                        <td class="ListaPlanos">@item.TelefoneDoPlano</td>
-                    </tr>
+                    foreach (var item in Model.ListPlanosMOD)
+                    {
+                        <tr id="@item.Id" style="cursor: pointer" onclick="location.href = '/Plano/Alterar/@item.Id';">
+                            <td class="ListaPlanos">@item.Plano</td>
+                            <td class="ListaPlanos">@item.TelefoneDoPlano</td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

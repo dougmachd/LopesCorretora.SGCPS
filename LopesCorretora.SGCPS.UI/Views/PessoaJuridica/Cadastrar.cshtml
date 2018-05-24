@@ -17,18 +17,12 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <h3 class="h3CadastroJuridico"> 1 - Dados da Plataforma </h3>
-        </div>
-    </div>
-
     @Html.Partial("_Errors")
     @using (Html.BeginForm("Cadastrar", "PessoaJuridica", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 2 - Dados da Empresa Contratante </h3>
+                <h3 class="h3CadastroJuridico"> 1 - Dados da Empresa Contratante </h3>
             </div>
         </div>
 
@@ -63,7 +57,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 3 - Endereço Fiscal (CNPJ) </h3>
+                <h3 class="h3CadastroJuridico"> 2 - Endereço Fiscal (CNPJ) </h3>
             </div>
         </div>
 
@@ -139,7 +133,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 4 - Endereço Correspondência (Fatura e Carteirinhas) <span id="btnEnderecoCorrespondencia" onclick="EnderecoCorrespondencia('mais')" style="cursor:pointer" class="glyphicon glyphicon-plus" /></h3>
+                <h3 class="h3CadastroJuridico"> 3 - Endereço Correspondência (Fatura e Carteirinhas) <span id="btnEnderecoCorrespondencia" onclick="EnderecoCorrespondencia('mais')" style="cursor:pointer" class="glyphicon glyphicon-plus" /></h3>
             </div>
         </div>
         <div id="EnderecoCorrespondencia" style="display:none">
@@ -242,39 +236,38 @@
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 5 - Número de Beneficiários por Plano </h3>
+                <h3 class="h3CadastroJuridico"> 4 - Número de Beneficiários por Plano </h3>
             </div>
         </div>
-
-
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-                <div class="form-group">
-                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios)
-                    @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, new { @class = "form-control", type = "text", id = "NumeroDeBeneficiarios", placeholder = "NumeroDoBeneficiarios." })
-                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, "", new { @class = "text-danger" })
+        <div id="planos">
+            <input type="hidden" id="hiddenQtdDePlanos" name="hiddenQtdDePlanos" value="0" />
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios)
+                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, new { @class = "form-control", type = "text", id = "NumeroDeBeneficiarios", placeholder = "NumeroDoBeneficiarios." })
+                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "Plano")
-                    @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, new SelectList((System.Collections.IEnumerable)Model.LisPlanoMOD, "Id", "Plano"), "Selecione", new { @class = "form-control", id = "IdPlanoPessoaJuridica", size = "1", @*selected = ""*@})
-                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "", new { @class = "text-danger" })
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "Plano")
+                        @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, new SelectList((System.Collections.IEnumerable)Model.LisPlanoMOD, "Id", "Plano"), "Selecione", new { @class = "form-control", id = "IdPlanoPessoaJuridica", size = "1", @*selected = ""*@})
+                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                <button onclick="AcrescentarPlano(1)" type="button" class="btn btn-default" id="addMais">Adicionar Mais</button>
+                <div class="col-xs-2 col-sm-2 col-md-2">
+                    <button style="margin-top: 14%" onclick="AcrescentarPlano('0')" type="button" class="btn btn-default" id="addPlano">Adicionar Mais</button>
+                </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 6 - Modalidade (Fator Moderador) </h3>
+                <h3 class="h3CadastroJuridico"> 5 - Modalidade (Fator Moderador) </h3>
             </div>
         </div>
 
@@ -290,7 +283,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 7 - Contratação Assistência Odontóligca</h3>
+                <h3 class="h3CadastroJuridico"> 6 - Contratação Assistência Odontóligca</h3>
             </div>
         </div>
 
@@ -341,11 +334,11 @@
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas)
                     @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas,
-                    new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
-                    new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
-                    new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
-                    new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
-                    }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1" })
+                         new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
+                        new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
+                        new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
+                        new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
+                         }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1" })
                     @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas, "", new { @class = "text-danger" })
                 </div>
             </div>

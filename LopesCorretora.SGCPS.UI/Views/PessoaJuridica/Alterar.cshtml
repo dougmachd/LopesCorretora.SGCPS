@@ -26,59 +26,13 @@
     @Html.Partial("_Errors")
     @using (Html.BeginForm("Alterar", "PessoaJuridica", FormMethod.Post, new { id = "AlterarPJ", enctype = "multipart/form-data" }))
     {
-        @*<div class="row">
-
-                <div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Concessionario)
-                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Concessionario, new { @class = "form-control", type = "text", id = "Concessionario", placeholder = "Concessionario." })
-                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Concessionario, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.CPF)
-                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.CPF, new { @class = "form-control", type = "text", id = "CPF", placeholder = "CPF." })
-                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.CPF, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="col-xs-5 col-sm-5 col-md-5">
-                    <div class="form-group">
-                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Nome)
-                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Concessionario, new { @class = "form-control", type = "text", id = "Nome", placeholder = "Nome." })
-                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Concessionario, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Celular)
-                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Celular, new { @class = "form-control", type = "text", id = "Celular", placeholder = "Celular." })
-                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Celular, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="col-xs-9 col-sm-9 col-md-9">
-                    <div class="form-group">
-                        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Email)
-                        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Email, new { @class = "form-control", type = "text", id = "Email", placeholder = "Email." })
-                        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjUsuarioMOD.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>*@
-
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 2 - Dados da Empresa Contratante </h3>
+                <h3 class="h3CadastroJuridico"> 1 - Dados da Empresa Contratante </h3>
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     @Html.HiddenFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.Id)
@@ -89,7 +43,7 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.CNPJ)
@@ -108,13 +62,13 @@
         </div>
 
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 3 - Endereço Fiscal (CNPJ) </h3>
+                <h3 class="h3CadastroJuridico"> 2 - Endereço Fiscal (CNPJ) </h3>
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-3">
                 <div class="form-group">
                     @Html.HiddenFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.Endereco.Id)
@@ -133,7 +87,7 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-2 col-sm-2 col-md-2">
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.Endereco.Numero)
@@ -167,7 +121,7 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-7 col-sm-7 col-md-9">
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.Endereco.Cidade)
@@ -186,12 +140,12 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 4 - Endereço Correspondência (Fatura e Carteirinhas) <span id="btnEnderecoCorrespondencia" onclick="EnderecoCorrespondencia('mais')" style="cursor:pointer" class="glyphicon glyphicon-plus" /></h3>
+                <h3 class="h3CadastroJuridico"> 3 - Endereço Correspondência (Fatura e Carteirinhas) <span id="btnEnderecoCorrespondencia" onclick="EnderecoCorrespondencia('mais')" style="cursor:pointer" class="glyphicon glyphicon-plus" /></h3>
             </div>
         </div>
-<div id="EnderecoCorrespondencia" style="display:none">
+        <div id="EnderecoCorrespondencia" style="display:none">
             <div class="row">
                 <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="form-group">
@@ -295,43 +249,43 @@
         </div>
 
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 5 - Número de Beneficiários por Plano </h3>
+                <h3 class="h3CadastroJuridico"> 4 - Número de Beneficiários por Plano </h3>
             </div>
         </div>
 
+        <div id="planos">
+            @for (int i = 0; i < Model.ListPlanoPessoaJuridicaMOD.Count; i++)
+            {
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="form-group">
+                            @Html.HiddenFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].Id)
+                            @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].NumeroDeBeneficiarios)
+                            @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].NumeroDeBeneficiarios, new { @class = "form-control", type = "text", id = "NumeroDeBeneficiarios", placeholder = "NumeroDoBeneficiarios." })
+                            @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].NumeroDeBeneficiarios, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-<div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-                <div class="form-group">
-                    @Html.HiddenFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Id)
-                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios)
-                    @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, new { @class = "form-control", type = "text", id = "NumeroDeBeneficiarios", placeholder = "NumeroDoBeneficiarios." })
-                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios, "", new { @class = "text-danger" })
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].PlanoId, "Plano")
+                            @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].PlanoId, new SelectList((System.Collections.IEnumerable)Model.LisPlanoMOD, "Id", "Plano"), "Selecione", new { @class = "form-control", id = "IdPlanoPessoaJuridica", size = "1", @*selected = ""*@})
+                            @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[i].PlanoId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "Plano")
-                    @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, new SelectList((System.Collections.IEnumerable)Model.LisPlanoMOD, "Id", "Plano"), "Selecione", new { @class = "form-control", id = "IdPlanoPessoaJuridica", size = "1", @*selected = ""*@})
-                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                <button onclick="AcrescentarPlano(1)" type="button" class="btn btn-default" id="addMais">Adicionar Mais</button>
-            </div>
+            }
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 6 - Modalidade (Fator Moderador) </h3>
+                <h3 class="h3CadastroJuridico"> 5 - Modalidade (Fator Moderador) </h3>
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Participacao, "Com participacao", new { @class = "radio-inline" })
                 @Html.RadioButtonFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Participacao, true, new { @class = "radio-inline", id = "ComParticipacao" })
@@ -341,13 +295,13 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 class="h3CadastroJuridico"> 7 - Contratação Assistência Odontóligca</h3>
+                <h3 class="h3CadastroJuridico"> 6 - Contratação Assistência Odontóligca</h3>
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Odontologia, "Sim", new { @class = "radio-inline" })
                 @Html.RadioButtonFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Odontologia, true, new { @class = "radio-inline", id = "ComOdontologia" })
@@ -357,7 +311,7 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].QualOdonto)
@@ -368,66 +322,66 @@
             </div>
         </div>
 
-<div class="row">
+        <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-3">
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.StatusId, "Status")
                     @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.StatusId, new SelectList((System.Collections.IEnumerable)Model.ListStatusMOD, "Id", "Status"), "Selecione", new { @class = "form-control", id = "Status", size = "1", @*selected = ""*@})
-    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.StatusId, "", new { @class = "text-danger" })
-</div>
+                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ObjPessoaJuridicaMOD.StatusId, "", new { @class = "text-danger" })
+                </div>
             </div>
-<div class="col-xs-3 col-sm-3 col-md-3">
-    <div class="form-group">
-        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato)
-        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato, new { @class = "form-control", type = "text", id = "NumeroContrato", placeholder = "Numero Contrato." })
-        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato, "", new { @class = "text-danger" })
-    </div>
-</div>
-<div class="col-xs-3 col-sm-3 col-md-3">
-    <div class="form-group">
-        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada)
-        @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada, new { @class = "form-control", type = "text", id = "ValorDeEntrada", placeholder = "Valor De Entrada." })
-        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada, "", new { @class = "text-danger" })
-    </div>
-</div>
-<div class="col-xs-3 col-sm-3 col-md-3">
-    <div class="form-group">
-        @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas)
-        @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas,
-                                 new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
-                            new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
-                            new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
-                            new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
-                                 }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1" })
-        @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas, "", new { @class = "text-danger" })
-    </div>
-</div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato)
+                    @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato, new { @class = "form-control", type = "text", id = "NumeroContrato", placeholder = "Numero Contrato." })
+                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada)
+                    @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada, new { @class = "form-control", type = "text", id = "ValorDeEntrada", placeholder = "Valor De Entrada." })
+                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].ValorDeEntrada, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas)
+                    @Html.DropDownListFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas,
+                                   new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
+                                    new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
+                                    new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
+                                    new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
+                                   }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1" })
+                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
 
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes)
-            @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes, new { @class = "form-control", type = "text", id = "Observacoes", placeholder = "Observacoes." })
-            @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes)
+                    @Html.TextBoxFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes, new { @class = "form-control", type = "text", id = "Observacoes", placeholder = "Observacoes." })
+                    @Html.ValidationMessageFor(cadastrarPessoaJurudicaVM => cadastrarPessoaJurudicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="input-group">
-            <input name="anexo" type="file" class="filestyle" data-buttonText="Anexar Arquivo">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="input-group">
+                    <input name="anexo" type="file" class="filestyle" data-buttonText="Anexar Arquivo">
+                </div>
+            </div><!-- /.col-lg-12 -->
         </div>
-    </div><!-- /.col-lg-12 -->
-</div>
-<br />
-<div id="actions" class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <button value="false" name="excluir" type="submit" class="btn btn-default" id="btnAlterar">Alterar</button>
-        <button value="true" name="excluir" type="button" class="btn btn-default" id="btnExcluir" onclick="ExcluirPJ()">Excluir</button>
-    </div>
-</div>
+        <br />
+        <div id="actions" class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <button value="false" name="excluir" type="submit" class="btn btn-default" id="btnAlterar">Alterar</button>
+                <button value="true" name="excluir" type="button" class="btn btn-default" id="btnExcluir" onclick="ExcluirPJ()">Excluir</button>
+            </div>
+        </div>
     }
 </div>
 

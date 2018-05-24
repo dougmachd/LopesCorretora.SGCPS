@@ -1,0 +1,53 @@
+﻿@model LopesCorretora.SGCPS.ViewsModels.DarBaixaVM
+
+<tbody>
+    @Html.HiddenFor(x => x.ObjPlanoPessoaJuridicaMOD.NumeroContrato)
+    @Html.HiddenFor(x => x.ObjPlanoPessoaJuridicaMOD.PessoaJuridicaId)
+    @Html.HiddenFor(x => x.ObjPlanoPessoaJuridicaMOD.Id)
+
+    @foreach (var item in @Model.ListHistoricoDeRecebimentoPjMODs)
+    {
+        <tr class="active">
+            <td>
+                <div class="form-check">
+                    <input checked value="" readonly="readonly" type="checkbox" class="form-check-input" id="Check1" disabled>
+                    <label class="form-check-label" for="Check1"> @item.NumeroDaParcela de @Model.ObjPlanoPessoaJuridicaMOD.NumeroDeParcelas</label>
+                </div>
+            </td>
+            <td class="tdDarBaixa">R$ @Model.ObjPlanoPessoaJuridicaMOD.ValorDeEntrada </td>
+            <td class="tdDarBaixa"> @item.Comissao% </td>
+            <td class="tdDarBaixa">@Model.ObjPlanoPessoaJuridicaMOD.PessoaJuridica.RazaoSocial</td>
+        </tr>
+    }
+
+    @for (int i = (0 + @Model.ListHistoricoDeRecebimentoPjMODs.Count); i < @Model.ObjPlanoPessoaJuridicaMOD.NumeroDeParcelas; i++)
+    {
+        <tr class="active">
+            @if (Model.ListComissaoMODs.Count > i)
+            {
+                <td>
+                    <div class="form-check">
+                        <input value="@Model.ListComissaoMODs[i].NumeroDaParcela" id="checkBox" type="checkbox" name="parcelas">
+                        <label class="form-check-label" for="Check1"> @Model.ListComissaoMODs[i].NumeroDaParcela de @Model.ObjPlanoPessoaJuridicaMOD.NumeroDeParcelas </label>
+                    </div>
+                </td>
+                <td class="tdDarBaixa">R$ @Model.ObjPlanoPessoaJuridicaMOD.ValorDeEntrada</td>
+                <td class="tdDarBaixa"> @Model.ListComissaoMODs[i].Comissao%</td>
+                <td class="tdDarBaixa">@Model.ObjPlanoPessoaJuridicaMOD.PessoaJuridica.RazaoSocial</td>
+            }
+            else
+            {
+                var parcela = i + 1;
+                <td>
+                    <div class="form-check">
+                        <input value="" readonly="readonly" type="checkbox" class="form-check-input" id="Check1" disabled>
+                        <label class="form-check-label" for="Check1"> @parcela de @Model.ObjPlanoPessoaJuridicaMOD.NumeroDeParcelas</label>
+                    </div>
+                </td>
+                <td class="tdDarBaixa">R$ @Model.ObjPlanoPessoaJuridicaMOD.ValorDeEntrada</td>
+                <td class="tdDarBaixa"> 0%</td>
+                <td class="tdDarBaixa">@Model.ObjPlanoPessoaJuridicaMOD.PessoaJuridica.RazaoSocial</td>
+            }
+        </tr>
+    }
+</tbody>

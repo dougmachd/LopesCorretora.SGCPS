@@ -1,4 +1,4 @@
-﻿@model LopesCorretora.SGCPS.ViewsModels.AlterarPessoaFisicaVM
+﻿@model LopesCorretora.SGCPS.ViewsModels.ControleDeDespesasVM
 @{
     ViewData["Title"] = "Controle de Despesas";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,77 +19,58 @@
         <div class="row">
             <div class="col-xs-5 col-sm-5 col-md-5">
                 <div class="form-group">
-                    <label for="tipo"> Tipo: </label>
-                    <input type="text" name="tipo" id="tipo" class="form-control">
+                    @Html.LabelFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.Tipo)
+                    @Html.TextBoxFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.Tipo, new { id = "Tipo", @class = "form-control" })
                 </div>
             </div>
-
             <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group" id="valor">
-                    <label for="valor"> Valor: </label>
-                    <input type="text" name="valor" id="valor" class="form-control">
+                    @Html.LabelFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.Valor)
+                    @Html.TextBoxFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.Valor, new { id = "Valor", @class = "form-control" })
                 </div>
             </div>
-
             <div class="col-xs-3 col-sm-3 col-md-3">
                 <div class="form-group" id="data">
-                    <label for="valor"> Data: </label>
-                    <input type="" name="validade" id="data" class="form-control">
-                    <input type="date" name="validade" id="data" class="form-control">
+                    @Html.LabelFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.DataDaBaixa)
+                    @Html.TextBoxFor(controleDeDepesasVM => controleDeDepesasVM.ObjHistoricoDeDepesaMOD.DataDaBaixa, new { type = "date", id = "Data", @class = "form-control" })
                 </div>
             </div>
-
         </div>
-
         <div class="row" id="buttonAdd">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <button type="button" class="btn btn-default" id="buttonAdd">Adicionar + </button>
+                <input id="indice" type="hidden" value="0">
+                <button onclick="mtdAddRowDespesa()" type="button" class="btn btn-default" id="buttonAdd">Adicionar + </button>
             </div>
         </div>
-
+        @Html.Partial("_Errors")
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h3 class="h3FinanceiroControle">  Despesas </h3>
             </div>
         </div>
-
-        <div class="row" id="TipoDespesa">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <h4 class="h4TipoDespesa">  Tipo </h4>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <h4 class="h4TipoDespesa">  Valor </h4>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <p>Telefone</p>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <p>R$120,00</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <p>Telefone</p>
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <p>R$120,00</p>
-            </div>
-        </div>
     </div>
-    <div id="actions" class="row">
+    @using (Html.BeginForm("ControleDeDespesas", "Financeiro", FormMethod.Post))
+    {
+        <table id="TabelaDespesas" class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="col-lg-4 col-md-4 col-sm-4">Tipo</th>
+                    <th class="col-lg-4 col-md-4 col-sm-4">Valor</th>
+                    <th class="col-lg-3 col-md-3 col-sm-3">Data</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <div class="col-xs-2 col-sm-2 col-md-2 pull-left">
-            @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+            </tbody>
+        </table>
+        <div id="actions" class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 pull-left">
+                @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 pull-right">
+                <button type="submit" class="btn btn-default" id="ButtonSalvarControle"> Salvar </button>
+            </div>
         </div>
-
-        <div class="col-xs-2 col-sm-2 col-md-2 pull-right">
-            <button type="submit" class="btn btn-default" id="ButtonSalvarControle"> Salvar </button>
-            <button type="button" class="btn btn-default" id="ButtonSalvarControle"> Salvar </button>
-        </div>
-    </div>
+    }
 </div>

@@ -9,17 +9,6 @@
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.csprojResolveAssemblyReference.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.deps.json
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.csprojResolveAssemblyReference.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.csproj.CoreCompileInputs.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.AssemblyInfoInputs.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.AssemblyInfo.cs
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.deps.json
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
@@ -31,3 +20,14 @@
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.AssemblyInfo.cs
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.dll
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.ViewsModels.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.deps.json
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Models.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Models.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.AssemblyInfo.cs
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.ViewsModels\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.ViewsModels.csprojResolveAssemblyReference.cache

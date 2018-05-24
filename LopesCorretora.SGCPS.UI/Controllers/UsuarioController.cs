@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using LopesCorretora.SGCPS.Models;
 using LopesCorretora.SGCPS.Business;
 using LopesCorretora.SGCPS.UI.Filtros;
+using Microsoft.AspNetCore.Http;
 
 namespace LopesCorretora.SGCPS.UI.Controllers
 {
@@ -52,7 +53,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         [HttpGet]
         public IActionResult Alterar(int Id)
         {
-            UsuarioMOD usuarioMOD = UsuarioBUS.Consultar(Id);
+            UsuarioMOD usuarioMOD = UsuarioBUS.Consultar(Convert.ToInt32(HttpContext.Session.GetString("IdDoUsuario")));
             if (usuarioMOD == null)
             {
                 #region mensagem

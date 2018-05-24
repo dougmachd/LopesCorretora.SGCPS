@@ -41,9 +41,9 @@ namespace LopesCorretora.SGCPS.Business
             }
         }
 
-        public static void Listar(int id)
-        {
-            ComissaoRPO.Listar(id);
-        }
+        //public static void Listar(int id)
+        //{
+        //    ComissaoRPO.Listar(id);
+        //}
     }
 }

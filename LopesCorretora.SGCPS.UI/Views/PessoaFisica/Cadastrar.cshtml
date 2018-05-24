@@ -255,11 +255,11 @@
                 <div class="form-group">
                     @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.ObjPessoaFisicaMOD.PlanoPessoaFisica.NumeroDeParcelas)
                     @Html.DropDownListFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.ObjPessoaFisicaMOD.PlanoPessoaFisica.NumeroDeParcelas,
-                         new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
-                        new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
-                        new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
-                        new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
-                         }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1", required = "required" })
+                    new SelectList(new[] { new { value = "1", text = "1x" }, new { value = "2", text = "2x" }, new { value = "3", text = "3x" },
+                    new { value = "4", text = "4x" }, new { value = "5", text = "5x" }, new { value = "6", text = "6x" },
+                    new { value = "7", text = "7x" }, new { value = "8", text = "8x" }, new { value = "9", text = "9x" },
+                    new { value = "10", text = "10x" }, new { value = "11", text = "11x" }, new { value = "12", text = "12x" },
+                    }, "value", "text"), "Selecione", new { @class = "form-control", id = "NumeroDeParcelas", size = "1", required = "required" })
                     @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.ObjPessoaFisicaMOD.PlanoPessoaFisica.NumeroDeParcelas, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -271,103 +271,21 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <button onclick="AdicionarDependente('0')" id="adicionarDependente" class="btn btn-default" type="button"> Adicionar dependente </button>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="QuantidadeDeDependentes">Quantidade de Dependentes</label>
+                <input placeholder="Quantidade de Dependentes" class="form-control" type="text" name="QuantidadeDeDependentes" id="QuantidadeDeDependentes" value="" />
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <button style="margin-top: 15%" onclick="AdicionarDependentes()" id="adicionarDependente" class="btn btn-default" type="button"> Adicionar dependente </button>
             </div>
         </div>
         <div id="form-dependente-1">
-            @*<div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h4> Dependente 1 </h4> <span style="cursor:pointer" id="btnRemoverDependente" onclick="RemoverDependente('form-dependente-1')" class="glyphicon glyphicon-minus" />
-                        </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <h4> Dependente 1 </h4> <span style="cursor:pointer" id="btnRemoverDependente" onclick="RemoverDependente('form-dependente-1')" class="glyphicon glyphicon-minus" />
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome, new { @class = "form-control", type = "text", id = "NomeDependente", placeholder = "Nome.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].Nome, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF, new { @class = "form-control", type = "text", id = "CPFDependente", placeholder = "CPF.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].CPF, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG, new { @class = "form-control", type = "text", id = "RGDependente", placeholder = "RG.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].RG, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="col-xs-2 col-sm-2 col-md-2">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento, new { @class = "form-control", type = "text", id = "DataDeNascimentoDependente", placeholder = "Data De Nascimento.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].DataDeNascimento, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco, new { @class = "form-control", type = "text", id = "GrauDeParentescoDependente", placeholder = "Grau De Parentesco.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].GrauDeParentesco, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae, new { @class = "form-control", type = "text", id = "NomeDaMaeDependente", placeholder = "Nome Da Mae.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NomeDaMae, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil)
-                                @Html.DropDownListFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, new SelectList
-                                     (new[] { new { value = "casado", text = "Casado" }, new { value = "solteiro", text = "Solteiro" } }, "value", "text"),
-                                     "Selecione", new { @class = "form-control", id = "EstadoCivilDependente", size = "1", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, "", new { @class = "text-danger" })
-                            </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                        <div class="form-group">
-                            @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil)
-                            @Html.DropDownListFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, new SelectList
-                                 (new[] { new { value = "casado", text = "Casado" }, new { value = "solteiro", text = "Solteiro" } }, "value", "text"),
-                                 "Selecione", new { @class = "form-control", id = "EstadoCivilDependente", size = "1", required = "required" })
-                            @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].EstadoCivil, "", new { @class = "text-danger" })
-                        </div>
-
-                        <div class="col-xs-8 col-sm-8 col-md-8">
-                            <div class="form-group">
-                                @Html.LabelFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS)
-                                @Html.TextBoxFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS, new { @class = "form-control", type = "text", id = "NumeroDoSUSDependente", placeholder = "Numero Do SUS.", required = "required" })
-                                @Html.ValidationMessageFor(cadastrarPessoaFisicaVM => cadastrarPessoaFisicaVM.LisDependentePessoaFisicaMOD[0].NumeroDoSUS, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>*@
+            <input type="hidden" id="hiddenQtdDependentes" value="0" />
         </div>
 
         <div id="actions" class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <input type="submit" id="submitCadastrarPessoaFisica" class="btn btn-default" value="Salvar" />
+                <input  type="submit" id="submitCadastrarPessoaFisica" class="btn btn-default pull-right" value="Salvar" />
             </div>
         </div>
     }

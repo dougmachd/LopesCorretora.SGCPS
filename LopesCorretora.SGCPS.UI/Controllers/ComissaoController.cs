@@ -54,10 +54,10 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             return View(comissaoVM);
         }
 
-        public IActionResult Listar(int Id)
-        {
-            ComissaoBUS.Listar(Id);
-            return View();
-        }
+        //public IActionResult Listar(int Id)
+        //{
+        //    ComissaoBUS.Listar(Id);
+        //    return View();
+        //}
     }
 }

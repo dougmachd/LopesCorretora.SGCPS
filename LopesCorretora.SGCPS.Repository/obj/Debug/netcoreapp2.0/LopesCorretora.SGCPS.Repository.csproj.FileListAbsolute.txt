@@ -9,17 +9,6 @@
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
 //Mac/Home/Desktop/Novo proj/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.deps.json
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Models.pdb
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.csprojResolveAssemblyReference.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.csproj.CoreCompileInputs.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.AssemblyInfoInputs.cache
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.AssemblyInfo.cs
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
-//Mac/Home/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.deps.json
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/bin/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
@@ -31,3 +20,14 @@
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.AssemblyInfo.cs
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.dll
 /Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Repository/obj/Debug/netcoreapp2.0/LopesCorretora.SGCPS.Repository.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.deps.json
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Models.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\bin\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Models.pdb
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.AssemblyInfo.cs
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.dll
+\\Mac\Home\Desktop\LopesCorretora.SGCPS\LopesCorretora.SGCPS.Repository\obj\Debug\netcoreapp2.0\LopesCorretora.SGCPS.Repository.pdb

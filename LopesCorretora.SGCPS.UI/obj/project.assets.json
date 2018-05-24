@@ -12992,41 +12992,49 @@
     ]
   },
   "packageFolders": {
-    "/Users/douglasmachado/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\douglasmachado\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.UI/LopesCorretora.SGCPS.UI.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.UI\\LopesCorretora.SGCPS.UI.csproj",
       "projectName": "LopesCorretora.SGCPS.UI",
-      "projectPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.UI/LopesCorretora.SGCPS.UI.csproj",
-      "packagesPath": "/Users/douglasmachado/.nuget/packages/",
-      "outputPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.UI/obj",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.UI\\LopesCorretora.SGCPS.UI.csproj",
+      "packagesPath": "C:\\Users\\douglasmachado\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/douglasmachado/.config/NuGet/NuGet.Config"
+        "C:\\Users\\douglasmachado\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/LopesCorretora.SGCPS.Business.csproj": {
-              "projectPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Business/LopesCorretora.SGCPS.Business.csproj"
+            "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Business\\LopesCorretora.SGCPS.Business.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Business\\LopesCorretora.SGCPS.Business.csproj"
             },
-            "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Models/LopesCorretora.SGCPS.Models.csproj": {
-              "projectPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.Models/LopesCorretora.SGCPS.Models.csproj"
+            "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Models\\LopesCorretora.SGCPS.Models.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.Models\\LopesCorretora.SGCPS.Models.csproj"
             },
-            "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/LopesCorretora.SGCPS.ViewsModels.csproj": {
-              "projectPath": "/Users/douglasmachado/Desktop/LopesCorretora.SGCPS/LopesCorretora.SGCPS.ViewsModels/LopesCorretora.SGCPS.ViewsModels.csproj"
+            "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.ViewsModels\\LopesCorretora.SGCPS.ViewsModels.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\LopesCorretora.SGCPS\\LopesCorretora.SGCPS.ViewsModels\\LopesCorretora.SGCPS.ViewsModels.csproj"
             }
           }
         }
@@ -13040,31 +13048,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
           "Google.Apis": {
             "target": "Package",
-            "version": "1.33.0"
+            "version": "[1.33.0, )"
           },
           "Google.Apis.Calendar.v3": {
             "target": "Package",
-            "version": "1.33.0.1209"
+            "version": "[1.33.0.1209, )"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.5"
+            "version": "[2.0.5, )"
           },
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
           },
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [

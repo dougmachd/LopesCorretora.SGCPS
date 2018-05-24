@@ -1,4 +1,4 @@
-﻿@model LopesCorretora.SGCPS.ViewsModels.AlterarPessoaFisicaVM
+﻿@model LopesCorretora.SGCPS.ViewsModels.DarBaixaVM
 @{
     ViewData["Title"] = "Realizar Baixa";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,104 +11,65 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-5 col-sm-5 col-md-5">
-            <div class="form-group">
-                <label for="nome-cliente" id="labelDarBaixa"> Cliente: </label>
-                <input type="text" name="nome-cliente" id="nome-cliente" class="form-control">
+    @using (Html.BeginForm("DarBaixa", "Financeiro", FormMethod.Get))
+    {
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <div class="form-group">
+                    <label for="numrero-contrato" id="labelDarBaixa"> Número de Contrato: </label>
+                    <input type="text" name="NumeroDoContrato" id="numrero-contrato" class="form-control">
+                </div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">
+                <div style="margin-top:24px" class="form-group">
+                    <input type="submit" class="btn btn-default" value="Buscar" />
+                </div>
             </div>
         </div>
-
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div class="form-group">
-                <label for="cpf-cliente" id="labelDarBaixa"> CPF: </label>
-                <input type="text" name="cpf-cliente" id="cpf-cliente" class="form-control">
-            </div>
-        </div>
-
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
-                <label for="numrero-contrato" id="labelDarBaixa"> Número de Contrato: </label>
-                <input type="text" name="numrero-contrato" id="numrero-contrato" class="form-control">
-            </div>
-        </div>
-    </div>
+    }
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <p id="pDarBaixa"> Qual parcela você deseja dar baixa ?</p>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <table class="table table-sm" id="tabelaDarBaixa">
-                <thead>
-                    <tr>
-                        <th scope="col" class="ColunaDarBaixa">Parcela</th>
-                        <th scope="col" class="ColunaDarBaixa">Valor</th>
-                        <th scope="col" class="ColunaDarBaixa">Comissão</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="active">
-                        <td>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="Check1">
-                                <label class="form-check-label" for="Check1"> 1 de 10 </label>
-                            </div>
-                        </td>
-                        <td class="tdDarBaixa">R$120,00</td>
-                        <td class="tdDarBaixa">R$30,00</td>
-                    </tr>
-
-                    <tr class="secondary">
-                        <td>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="Check2">
-                                <label class="form-check-label" for="Check2"> 2 de 10 </label>
-                            </div>
-                        </td>
-                        <td class="tdDarBaixa">R$120,00</td>
-                        <td class="tdDarBaixa">R$30,00</td>
-                    </tr>
-
-                    <tr class="active">
-                        <td>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="Check3">
-                                <label class="form-check-label" for="Check3"> 3 de 10 </label>
-                            </div>
-                        </td>
-                        <td class="tdDarBaixa">R$120,00</td>
-                        <td class="tdDarBaixa">R$30,00</td>
-                    </tr>
-
-                    <tr class="secondary">
-                        <td>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="Check4">
-                                <label class="form-check-label" for="Check4"> 4 de 10 </label>
-                            </div>
-                        </td>
-                        <td class="tdDarBaixa">R$120,00</td>
-                        <td class="tdDarBaixa">R$30,00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
-    <div id="actions" class="row">
-
-        <div class="col-xs-6 col-sm-6 col-md-6">
-            @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+    @using (Html.BeginForm("DarBaixa", "Financeiro", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                @Html.Partial("_Errors")
+                <table class="table table-hover" id="tabelaDarBaixa">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="ColunaDarBaixa">Parcela</th>
+                            <th scope="col" class="ColunaDarBaixa">Valor</th>
+                            <th scope="col" class="ColunaDarBaixa">Comissão</th>
+                            <th scope="col" class="ColunaDarBaixa">Cliente</th>
+                        </tr>
+                    </thead>
+                    @if (Model != null)
+                    {
+                        @if (Model.ObjPessoaFisicaMOD != null)
+                        {
+                            @Html.Partial("_PartialDarBaixaPf", Model)
+                        }
+                        else
+                        {
+                            @Html.Partial("_PartialDarBaixaPj", Model)
+                        }
+                    }
+                </table>
+            </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <button type="button" class="btn btn-default" id="buttonBaixa"> Dar Baixa </button>
-        </div>
+        <div id="actions" class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                @Html.ActionLink("Financeiro", "Index", "Financeiro", null, new { @class = "btn btn-default", id = "botaoMenu" })
+            </div>
 
-    </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <button type="submit" class="btn btn-default" id="buttonBaixa"> Dar Baixa </button>
+            </div>
+        </div>
+    }
 </div>
