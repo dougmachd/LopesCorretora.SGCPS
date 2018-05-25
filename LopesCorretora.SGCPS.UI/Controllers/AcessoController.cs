@@ -42,6 +42,8 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         }
     }
 }
+
+
 //public IActionResult Google(UsuarioMOD usuarioMOD)
 //{
 //    usuarioMOD = UsuarioBUS.IsValid(usuarioMOD);

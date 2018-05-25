@@ -294,8 +294,20 @@ function mtdOrganizarIDsTabelaDespesas() {
     return (linhas.length + 1)
 }
 
+function RetornarTipo() {
+    var Tipos = document.getElementsByName('Tipo');
+    var Tipo = "";
+    for (var i = 0; i < Tipos.length; i++) {
+        if (Tipos[i].checked) {
+            Tipo = Tipos[i].value;
+            break;
+        }
+    }
+    return Tipo
+}
+
 function mtdAddRowComissao() {
-    var Tipo = document.getElementById('Tipo').value;
+    var Tipo = RetornarTipo();
     var Comissao = document.getElementById('Comissao').value;
     var NumeroDaParcela = document.getElementById('NumeroDaParcela').value;
 

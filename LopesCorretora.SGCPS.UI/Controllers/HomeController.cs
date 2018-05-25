@@ -30,7 +30,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             return View();
         }
 
-        public PartialViewResult Header()
+        public IActionResult Header()
         {
             ViewBag.Usuario = HttpContext.Session.GetString("EmailDoUsuario");
             return PartialView();
