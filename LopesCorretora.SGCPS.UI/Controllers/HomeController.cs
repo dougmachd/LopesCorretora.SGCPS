@@ -21,6 +21,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         public IActionResult Dashboard()
         {
             HttpContext.Session.SetInt32("IdUsuario", 1);
+            ViewBag.EmailUsuario = HttpContext.Session.GetString("EmailDoUsuario").ToString();
             return View();
         }
 

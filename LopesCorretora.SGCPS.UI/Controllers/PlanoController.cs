@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using LopesCorretora.SGCPS.Business;
 using LopesCorretora.SGCPS.Models;
 using LopesCorretora.SGCPS.UI.Filtros;
+using System.Collections.Generic;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 namespace LopesCorretora.SGCPS.UI.Controllers

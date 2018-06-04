@@ -15,14 +15,14 @@ namespace LopesCorretora.SGCPS.Models
 		public PlanoMOD Plano { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Numero Da Parcela", Description = "Numero Da Parcela")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Número Da Parcela", Description = "Número Da Parcela")]
 		#endregion
 		public int NumeroDaParcela { get; set; }
 
 		#region DataAnnotations
 		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Percentagem da Comissao", Description = "Percentagem da Comissao")]
+		[Display(Name = "Percentagem da Comissão", Description = "Percentagem da Comissão")]
 		#endregion
 		public int Comissao { get; set; }
 

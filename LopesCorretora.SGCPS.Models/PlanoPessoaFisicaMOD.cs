@@ -10,20 +10,20 @@ namespace LopesCorretora.SGCPS.Models
         public int Id { get; set; }
 
         #region DataAnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Numero do contrado", Description = "Numero de contrato, plano pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+        [Display(Name = "Número do contrado", Description = "Número de contrato, plano pessoa física")]
         #endregion
         public string NumeroContrato { get; set; }
 
         #region DataAnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Valor de entrada", Description = "Valor de entrada do plano, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Valor de entrada", Description = "Valor de entrada do plano, pessoa física")]
         #endregion
         public decimal? ValorDeEntrada { get; set; }
 
         #region DataAnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Numero de parcelas", Description = "Numero de parcelas do plano, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Número de parcelas", Description = "Número de parcelas do plano, pessoa física")]
         #endregion
         public int? NumeroDeParcelas { get; set; }
 

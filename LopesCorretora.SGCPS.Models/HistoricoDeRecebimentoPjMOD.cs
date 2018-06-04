@@ -14,7 +14,7 @@ namespace LopesCorretora.SGCPS.Models
 
         #region DataAnnotations
         [Required(ErrorMessage = "* Campo obrigatorio")]
-        [Display(Name = "Numero da parcela", Description = "Numero da parcela")]
+        [Display(Name = "Número da parcela", Description = "Número da parcela")]
         #endregion
         public int NumeroDaParcela
         {
@@ -41,7 +41,7 @@ namespace LopesCorretora.SGCPS.Models
 
         #region DataAnnotations
         [Required(ErrorMessage = "* Campo obrigatorio")]
-        [Display(Name = "Pessoa Juridica", Description = "Pessoa Juridica")]
+        [Display(Name = "Pessoa Jurídica", Description = "Pessoa Jurídica")]
         #endregion
         public int PessoaJuridicaId
         {
@@ -61,7 +61,7 @@ namespace LopesCorretora.SGCPS.Models
 
         #region DataAnnotations
         [Required(ErrorMessage = "* Campo obrigatorio")]
-        [Display(Name = "Numero Do Contrato", Description = "Numero Do Contrato")]
+        [Display(Name = "Número Do Contrato", Description = "Número Do Contrato")]
         #endregion
         public string NumeroDoContrato
         {

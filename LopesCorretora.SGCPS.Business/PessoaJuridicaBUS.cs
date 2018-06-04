@@ -17,8 +17,8 @@ namespace LopesCorretora.SGCPS.Business
                 {
                     //ObjUsuarioMOD = new UsuarioMOD(),
                     ObjPessoaJuridicaMOD = new PessoaJuridicaMOD(),
-                    LisPlanoMOD = PlanoRPO.Listar(),
-                    ListStatusMOD = StatusRPO.Listar()
+                    LisPlanoMODs = PlanoRPO.Listar(),
+                    ListStatusMODs = StatusRPO.Listar(),
                 };
             }
             catch (Exception)
@@ -31,8 +31,8 @@ namespace LopesCorretora.SGCPS.Business
         {
             try
             {
-                cadastrarPessoaJuridicaVM.LisPlanoMOD = PlanoRPO.Listar();
-                cadastrarPessoaJuridicaVM.ListStatusMOD = StatusRPO.Listar();
+                cadastrarPessoaJuridicaVM.LisPlanoMODs = PlanoRPO.Listar();
+                cadastrarPessoaJuridicaVM.ListStatusMODs = StatusRPO.Listar();
                 return cadastrarPessoaJuridicaVM;
             }
             catch (Exception)
@@ -42,14 +42,14 @@ namespace LopesCorretora.SGCPS.Business
         }
 
         public static CadastrarPessoaJuridicaVM CadastrarPessoaJuridica(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM,
-            List<int> NumeroDeBeneficiarios = null, List<int> PlanoId = null)
+            List<int> NumeroDeBeneficiarios, List<string> Categoria, List<string> Tipos)
         {
             try
             {
                 PessoaJuridicaRPO.Cadastrar(cadastrarPessoaJuridicaVM.ObjPessoaJuridicaMOD);
-                BindCadastrarPjVM(cadastrarPessoaJuridicaVM);
-                ContatoPessoaFisicaBUS.CadastrarContatosPessoaJuridica(cadastrarPessoaJuridicaVM.LisContatoPessoaJuridicaMOD);
-                PlanoPessoaJuridicaBUS.CadastrarPlanoPessoaJuridica(cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD);
+                BindCadastrarPjVM(cadastrarPessoaJuridicaVM, NumeroDeBeneficiarios, Categoria);
+                ContatoPessoaFisicaBUS.CadastrarContatosPessoaJuridica(cadastrarPessoaJuridicaVM.LisContatoPessoaJuridicaMODs);
+                PlanoPessoaJuridicaBUS.CadastrarPlanoPessoaJuridica(cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs, NumeroDeBeneficiarios, Categoria, Tipos);
                 CadastrarPessoaJuridicaVMPost(cadastrarPessoaJuridicaVM);
                 return cadastrarPessoaJuridicaVM;
             }
@@ -59,14 +59,14 @@ namespace LopesCorretora.SGCPS.Business
             }
         }
 
-        public static void BindCadastrarPjVM(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM)
+        public static void BindCadastrarPjVM(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM, List<int> NumeroDeBeneficiarios = null, List<string> Categoria = null)
         {
-            foreach (var item in cadastrarPessoaJuridicaVM.LisContatoPessoaJuridicaMOD)
+            foreach (var item in cadastrarPessoaJuridicaVM.LisContatoPessoaJuridicaMODs)
             {
                 item.PessoaJuridicaId = cadastrarPessoaJuridicaVM.ObjPessoaJuridicaMOD.Id;
             }
 
-            foreach (var item in cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD)
+            foreach (var item in cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs)
             {
                 item.PessoaJuridicaId = cadastrarPessoaJuridicaVM.ObjPessoaJuridicaMOD.Id;
             }
@@ -79,10 +79,10 @@ namespace LopesCorretora.SGCPS.Business
             return new AlterarPessoaJuridicaVM
             {
                 ObjPessoaJuridicaMOD = PessoaJuridicaRPO.Consultar(id),
-                LisContatoPessoaJuridicaMOD = ContatoPessoaJuridicaRPO.Listar(id),
-                ListPlanoPessoaJuridicaMOD = PlanoPessoaJuridicaRPO.Listar(id),
-                LisPlanoMOD = PlanoRPO.Listar(),
-                ListStatusMOD = StatusRPO.Listar()
+                LisContatoPessoaJuridicaMODs = ContatoPessoaJuridicaRPO.Listar(id),
+                ListPlanoPessoaJuridicaMODs = PlanoPessoaJuridicaRPO.Listar(id),
+                LisPlanoMODs = PlanoRPO.Listar(),
+                ListStatusMODs = StatusRPO.Listar()
             };
         }
 
@@ -90,15 +90,15 @@ namespace LopesCorretora.SGCPS.Business
         {
             return new AlterarPessoaJuridicaVM
             {
-                ListStatusMOD = StatusRPO.Listar(),
-                LisPlanoMOD = PlanoRPO.Listar()
+                ListStatusMODs = StatusRPO.Listar(),
+                LisPlanoMODs = PlanoRPO.Listar()
             };
         }
 
         public static AlterarPessoaJuridicaVM AlterarPessoaJuridicaVM(AlterarPessoaJuridicaVM alterarPessoaJuridicaVM)
         {
-            alterarPessoaJuridicaVM.ListStatusMOD = StatusRPO.Listar();
-            alterarPessoaJuridicaVM.LisPlanoMOD = PlanoRPO.Listar();
+            alterarPessoaJuridicaVM.ListStatusMODs = StatusRPO.Listar();
+            alterarPessoaJuridicaVM.LisPlanoMODs = PlanoRPO.Listar();
             return alterarPessoaJuridicaVM;
         }
 
@@ -106,31 +106,31 @@ namespace LopesCorretora.SGCPS.Business
         {
             BindAlterarPjVM(alterarPessoaJuridicaVM);
             PessoaJuridicaRPO.Alterar(alterarPessoaJuridicaVM.ObjPessoaJuridicaMOD);
-            PlanoPessoaJuridicaBUS.AlterarPlanoPessoaJuridica(alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD);
-            ContatoPessoaJuridicaBUS.AlterarContatosPessoasJuridicas(alterarPessoaJuridicaVM.LisContatoPessoaJuridicaMOD);
+            PlanoPessoaJuridicaBUS.AlterarPlanoPessoaJuridica(alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs);
+            ContatoPessoaJuridicaBUS.AlterarContatosPessoasJuridicas(alterarPessoaJuridicaVM.LisContatoPessoaJuridicaMODs);
 
             return AlterarPessoaJuridicaVM(alterarPessoaJuridicaVM);
         }
 
         public static void BindAlterarPjVM(AlterarPessoaJuridicaVM alterarPessoaJuridicaVM)
         {
-            foreach (var item in alterarPessoaJuridicaVM.LisContatoPessoaJuridicaMOD)
+            foreach (var item in alterarPessoaJuridicaVM.LisContatoPessoaJuridicaMODs)
             {
                 item.PessoaJuridicaId = alterarPessoaJuridicaVM.ObjPessoaJuridicaMOD.Id;
             }
 
-            foreach (var item in alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD)
+            foreach (var item in alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs)
             {
-                item.NumeroContrato = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroContrato;
-                item.NumeroDeBeneficiarios = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeBeneficiarios;
-                item.NumeroDeParcelas = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].NumeroDeParcelas;
-                item.Observacoes = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].Observacoes;
-                item.Odontologia = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].Odontologia;
-                item.Participacao = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].Participacao;
+                item.NumeroContrato = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].NumeroContrato;
+                item.NumeroDeBeneficiarios = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].NumeroDeBeneficiarios;
+                item.NumeroDeParcelas = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].NumeroDeParcelas;
+                item.Observacoes = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].Observacoes;
+                item.Odontologia = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].Odontologia;
+                item.Participacao = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].Participacao;
                 item.PessoaJuridicaId = alterarPessoaJuridicaVM.ObjPessoaJuridicaMOD.Id;
-                item.PlanoId = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].PlanoId;
-                item.QualOdonto = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].QualOdonto;
-                item.UsuarioId = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].UsuarioId;
+                item.PlanoId = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].PlanoId;
+                item.QualOdonto = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].QualOdonto;
+                item.UsuarioId = alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].UsuarioId;
             }
         }
         #endregion

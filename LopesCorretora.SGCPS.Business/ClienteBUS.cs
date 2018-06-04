@@ -81,7 +81,7 @@ namespace LopesCorretora.SGCPS.Business
                     DarBaixaVM a = new DarBaixaVM
                     {
                         ListHistoricoDeRecebimentoPfMODs = HistoricoDeRecebimentoPfRPO.Consultar(NumeroDoContrato).OrderBy(x => x.NumeroDaParcela).ToList(),
-                        ListComissaoMODs = ComissaoRPO.Listar(pessoaFisicaMOD.PlanoPessoaFisicaId, "PF").OrderBy(x => x.NumeroDaParcela).ToList(),
+						ListComissaoMODs = ComissaoRPO.Listar(pessoaFisicaMOD.PlanoPessoaFisica.PlanoId, "PF").OrderBy(x => x.NumeroDaParcela).ToList(),
                         ObjPessoaFisicaMOD = pessoaFisicaMOD
                     };
                     return a;

@@ -1,5 +1,10 @@
 ﻿<Properties StartupConfiguration="{CC5811ED-A6AB-4A6D-A2AD-5E0E41B2BE9D}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LopesCorretora.SGCPS.Business/ClienteBUS.cs">
+    <Files>
+      <File FileName="LopesCorretora.SGCPS.UI/Controllers/FinanceiroController.cs" Line="89" Column="1" />
+      <File FileName="LopesCorretora.SGCPS.Business/ClienteBUS.cs" Line="78" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

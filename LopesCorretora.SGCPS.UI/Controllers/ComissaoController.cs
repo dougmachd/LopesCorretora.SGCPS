@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LopesCorretora.SGCPS.Business;
+using LopesCorretora.SGCPS.UI.Filtros;
 using LopesCorretora.SGCPS.ViewsModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LopesCorretora.SGCPS.UI.Controllers
 {
+    [AutorizacaoFilter]
     public class ComissaoController : Controller
     {
 
@@ -18,13 +20,13 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(ComissaoVM comissaoVM)
+        public IActionResult Cadastrar(ComissaoVM comissaoVM, List<string> Tipos, List<int> NumeroDaParcela, List<int> Comissao)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    ComissaoBUS.Cadastrar(comissaoVM);
+                    ComissaoBUS.Cadastrar(comissaoVM.ObjComissaoMOD.PlanoId, Tipos, NumeroDaParcela, Comissao);
                     comissaoVM = ComissaoBUS.ComissaoVM(comissaoVM.ObjComissaoMOD);
                     #region mensagem
                     ViewBag.Mensagem = "Comissao cadastrada com sucesso!";
@@ -54,10 +56,10 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             return View(comissaoVM);
         }
 
-        //public IActionResult Listar(int Id)
-        //{
-        //    ComissaoBUS.Listar(Id);
-        //    return View();
-        //}
+        [HttpGet]
+        public JsonResult ReturnTipos(int Id)
+        {
+            return Json(ComissaoBUS.ReturnTipos(Id));
+        }
     }
 }

@@ -12,48 +12,48 @@ namespace LopesCorretora.SGCPS.Models
 
         #region DataAnnotations
         [Required(ErrorMessage ="Campo obrigatorio")]
-        [Display(Name ="Nome", Description ="Nome do dependente, pessoa fisica")]
+		[Display(Name ="Nome", Description ="Nome do dependente, pessoa física")]
         #endregion
         public string Nome { get; set; }
 
         #region DataAnnotations
-        [Display(Name ="CPF", Description = "CPF do dependente, pessoa fisica")]
+		[Display(Name ="CPF", Description = "CPF do dependente, pessoa física")]
         #endregion
         public string CPF { get; set; }
         
         #region DataAnnotations
-        [Display(Name ="RG", Description = "RG do dependente, pessoa fisica")]
+		[Display(Name ="RG", Description = "RG do dependente, pessoa física")]
         #endregion
         public string RG { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Data de nascimento", Description = "Data de nascimento do dependente, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+        [Display(Name = "Data de nascimento", Description = "Data de nascimento do dependente, pessoa física")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         #endregion
         public DateTime? DataDeNascimento { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Grau de parentesco", Description = "Grau de parentesco do dependente, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Grau de parentesco", Description = "Grau de parentesco do dependente, pessoa física")]
         #endregion
         public string GrauDeParentesco { get; set; }
 
         #region DataAnnotations
         [Required(ErrorMessage ="Campo obrigatorio")]
-        [Display(Name = "Nome da mae", Description = "Nome da mae do dependente, pessoa fisica")]
+		[Display(Name = "Nome da mãe", Description = "Nome da mãe do dependente, pessoa física")]
         #endregion
         public string NomeDaMae { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Estado civil", Description = "Estado civil do dependente, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Estado civil", Description = "Estado civil do dependente, pessoa física")]
         #endregion
         public string EstadoCivil { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Numero do SUS", Description = "Numero do SUS do dependente, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Número do SUS", Description = "Número do SUS do dependente, pessoa física")]
         #endregion
         public string NumeroDoSUS { get; set; }
 

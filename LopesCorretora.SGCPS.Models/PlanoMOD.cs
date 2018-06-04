@@ -11,7 +11,7 @@ namespace LopesCorretora.SGCPS.Models
         public int Id { get; set; }
         
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
         [MinLength(10, ErrorMessage = "Telefone invalido")]
         [MaxLength(12, ErrorMessage = "Telefone invalido")]
         [Display(Name = "Telefone do Plano", Description = "Telefone de contato do plano")]
@@ -19,7 +19,7 @@ namespace LopesCorretora.SGCPS.Models
         public string TelefoneDoPlano { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
         [Display(Name = "Plano", Description = "Nome do Plano")]
         #endregion
         public string Plano { get; set; }

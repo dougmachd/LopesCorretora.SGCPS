@@ -21,6 +21,34 @@ namespace LopesCorretora.SGCPS.Business
             }
         }
 
+        public static void Cadastrar(int PlanoId, List<string> Tipos, List<int> NumeroDaParcela, List<int> Comissao)
+        {
+            try
+            {
+                ComissaoRPO.Cadastrar(BuildComissao(PlanoId, Tipos, NumeroDaParcela, Comissao));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private static List<ComissaoMOD> BuildComissao(int PlanoId, List<string> Tipos, List<int> NumeroDaParcela, List<int> Comissao)
+        {
+            List<ComissaoMOD> ListComissaoMODs = new List<ComissaoMOD>();
+            for (int i = 0; i < Comissao.Count; i++)
+            {
+                ListComissaoMODs.Add(new ComissaoMOD
+                {
+                    Comissao = Comissao[i],
+                    NumeroDaParcela = NumeroDaParcela[i],
+                    Tipo = Tipos[i],
+                    PlanoId = PlanoId
+                });
+            }
+            return ListComissaoMODs;
+        }
+
         public static ComissaoVM ComissaoVM(ComissaoMOD comissaoMOD = null)
         {
             try
@@ -41,9 +69,9 @@ namespace LopesCorretora.SGCPS.Business
             }
         }
 
-        //public static void Listar(int id)
-        //{
-        //    ComissaoRPO.Listar(id);
-        //}
+        public static List<ComissaoMOD> ReturnTipos(int id)
+        {
+            return ComissaoRPO.Consultar(id);
+        }
     }
 }

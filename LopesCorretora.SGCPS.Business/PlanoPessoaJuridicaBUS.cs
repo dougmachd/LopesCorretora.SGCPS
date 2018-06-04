@@ -7,14 +7,14 @@ namespace LopesCorretora.SGCPS.Business
 {
     public class PlanoPessoaJuridicaBUS
     {
-        public static void CadastrarPlanoPessoaJuridica(List<PlanoPessoaJuridicaMOD> list, 
-            List<int> NumeroDeBeneficiarios = null, List<int> PlanoId = null)
+        public static void CadastrarPlanoPessoaJuridica(List<PlanoPessoaJuridicaMOD> list,
+            List<int> NumeroDeBeneficiarios, List<string> Categoria, List<string> Tipos)
         {
             try
             {
                 if (NumeroDeBeneficiarios != null)
                 {
-                    BindPlanoPessoaJuridica(list, NumeroDeBeneficiarios, PlanoId);
+                    BindPlanoPessoaJuridica(list, NumeroDeBeneficiarios, Categoria, Tipos);
                 }
 
                 foreach (var item in list)
@@ -29,7 +29,7 @@ namespace LopesCorretora.SGCPS.Business
         }
 
         public static List<PlanoPessoaJuridicaMOD> BindPlanoPessoaJuridica(List<PlanoPessoaJuridicaMOD> list,
-            List<int> NumeroDeBeneficiarios, List<int> PlanoId)
+            List<int> NumeroDeBeneficiarios, List<string> Categoria, List<string> Tipos)
         {
             try
             {
@@ -37,8 +37,9 @@ namespace LopesCorretora.SGCPS.Business
                 {
                     list.Add(new PlanoPessoaJuridicaMOD
                     {
-                        PlanoId = PlanoId[i],
+                        Categoria = Categoria[i],
                         NumeroDeBeneficiarios = NumeroDeBeneficiarios[i],
+                        PlanoId = list[0].PlanoId,
                         NumeroContrato = list[0].NumeroContrato,
                         NumeroDeParcelas = list[0].NumeroDeParcelas,
                         Observacoes = list[0].Observacoes,
@@ -48,7 +49,7 @@ namespace LopesCorretora.SGCPS.Business
                         PessoaJuridicaId = list[0].PessoaJuridicaId,
                         Plano = list[0].Plano,
                         QualOdonto = list[0].QualOdonto,
-                        Tipo = list[0].Tipo,
+                        Tipo = Tipos[i],
                         Usuario = list[0].Usuario,
                         UsuarioId = list[0].UsuarioId,
                         ValorDeEntrada = list[0].ValorDeEntrada

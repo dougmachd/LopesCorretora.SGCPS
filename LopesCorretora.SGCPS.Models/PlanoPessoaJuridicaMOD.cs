@@ -6,8 +6,8 @@ namespace LopesCorretora.SGCPS.Models
 	{
 		#region DataAnnotations
 		[Key]
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "ID Plano Pessoa Juridica", Description = "ID Plano, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "ID Plano Pessoa Juridica", Description = "ID Plano, pessoa jurídica")]
 		#endregion
 		public int Id { get; set; }
 
@@ -16,45 +16,45 @@ namespace LopesCorretora.SGCPS.Models
 		public bool Odontologia { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Numero do Contrato", Description = "Numero do Contrato, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Numero do Contrato", Description = "Número do Contrato, pessoa jurídica")]
 		#endregion
 		public string NumeroContrato { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Valor de Entrada", Description = "Valor de Entrada, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Valor de Entrada", Description = "Valor de Entrada, pessoa jurídica")]
 		#endregion
 		public decimal? ValorDeEntrada { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Numero de Parcelas", Description = "Numero de Parcelas, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Numero de Parcelas", Description = "Número de Parcelas, pessoa jurídica")]
 		#endregion
 		public int? NumeroDeParcelas { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Numero De Beneficiarios", Description = "Numero Do Beneficiarios, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Numero De Beneficiarios", Description = "Número Do Beneficiarios, pessoa jurídica")]
 		#endregion
 		public int? NumeroDeBeneficiarios { get; set; }
 
 		public string Observacoes { get; set; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
-		[Display(Name = "Participacao", Description = "Participacao, pessoa juridica")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Participação", Description = "Participacao, pessoa jurídica")]
 		#endregion
 		public string StrParticipacao { get => Participacao == true ? "Com Participacao" : "Sem Participacao"; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
 		[Display(Name = "Odontologia", Description = "Odontologia, pessoa juridica")]
 		#endregion
 		public string StrOdontologia { get => Odontologia == true ? "Com Odontologia" : "Sem Odontologia"; }
 
 		#region DataAnnotations
-		[Required(ErrorMessage = "* Campo obrigatorio")]
+		[Required(ErrorMessage = "* Campo obrigatório")]
 		[Display(Name = "Qual Odonto", Description = "Qual plano odontologico?")]
 		#endregion
 		public string QualOdonto { get; set; }
@@ -75,9 +75,15 @@ namespace LopesCorretora.SGCPS.Models
 		public PessoaJuridicaMOD PessoaJuridica { get; set; }
 
 		#region DataAnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
         [Display(Name = "Tipo", Description = "Tipo do plano")]
         #endregion
 		public string Tipo { get; set; }
-	}
+
+        #region DataAnotations
+        [Required(ErrorMessage = "* Campo obrigatório")]
+        [Display(Name = "Categoria", Description = "Categoria do plano")]
+        #endregion
+        public string  Categoria { get; set; }
+    }
 }

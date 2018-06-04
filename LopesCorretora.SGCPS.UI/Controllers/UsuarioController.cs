@@ -53,7 +53,12 @@ namespace LopesCorretora.SGCPS.UI.Controllers
         [HttpGet]
         public IActionResult Alterar(int Id)
         {
-            UsuarioMOD usuarioMOD = UsuarioBUS.Consultar(Convert.ToInt32(HttpContext.Session.GetString("IdDoUsuario")));
+            UsuarioMOD usuarioMOD;
+            if (Id == 0)
+                usuarioMOD = UsuarioBUS.Consultar(Convert.ToInt32(HttpContext.Session.GetString("IdDoUsuario")));
+            else
+                usuarioMOD = UsuarioBUS.Consultar(Id);
+
             if (usuarioMOD == null)
             {
                 #region mensagem

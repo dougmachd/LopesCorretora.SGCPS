@@ -62,8 +62,8 @@ function GetCepPj(e) {
 function AcrescentarPlano(e) {
     var e = document.getElementById('hiddenQtdDePlanos').value;
     $("#planos")
-        .append(
-        " <div id='plano_" + e + "'  class='row'> " +
+        .append("<div id='plano_" + e + "' class='row'>"+
+        " <div class='row'> " +
         "     <div class='col-xs-4 col-sm-4 col-md-4'> " +
         "         <div class='form-group'> " +
         "             <label for='ListPlanoPessoaJuridicaMOD_0__NumeroDeBeneficiarios'>Numero De Beneficiarios</label> " +
@@ -74,16 +74,33 @@ function AcrescentarPlano(e) {
         "     <div class='col-xs-6 col-sm-6 col-md-6'> " +
         "         <div class='form-group'> " +
         "             <label for='ListPlanoPessoaJuridicaMOD_0__PlanoId'>Plano</label> " +
-        "             <select class='form-control' data-val='true' data-val-required='The PlanoId field is required.' id='IdPlanoPessoaJuridica' name='PlanoId' size='1'><option value=''>Selecione</option> " +
-        "                 <option value='1'>Unimed</option> " +
-        "             </select> " +
-        "             <span class='field-validation-valid text-danger' data-valmsg-for='ListPlanoPessoaJuridicaMOD[0].PlanoId' data-valmsg-replace='true'></span> " +
+        "             <input type='text' class='form-control' name='Categoria'  value='' />" +
+        "             <span class='field-validation-valid text-danger' data-valmsg-for='ListPlanoPessoaJuridicaMOD[0].Categoria' data-valmsg-replace='true'></span> " +
         "         </div> " +
         "     </div> " +
         "     <div class='col-xs-1 col-sm-1 col-md-1'> " +
         "         <span style='cursor:pointer; margin-top: 45%' id='btnRemoverPlano' onclick='RemoverPlano(plano_" + e + ")' class='glyphicon glyphicon-minus' />" +
         "     </div> " +
-        " </div> ");
+        " </div> " +
+        " <div id='TiposDePlanos' class='row'> " +
+        "            <div class='col-lg-3 col-sm-3 col-md-3 form-group'> " +
+        "                <label>PME</label> " +
+        "                <input type='radio' name='Tipos' value='PME' /> " +
+        "            </div> " +
+        "            <div class='col-lg-3 col-sm-3 col-md-3 form-group'> " +
+        "                <label>PME de 2 até 29 vidas</label> " +
+        "                <input type='radio' name='Tipos' value='PME de 2 até 29 vidas' /> " +
+        "            </div> " +
+        "            <div class='col-lg-3 col-sm-3 col-md-3 form-group'> " +
+        "                <label>PME de 03 até 29 vidas</label> " +
+        "                <input type='radio' name='Tipos' value='PME de 03 até 29 vidas' /> " +
+        "            </div> " +
+        "            <div class='col-lg-3 col-sm-3 col-md-3 form-group'> " +
+        "                <label>PME de 30 até 99 vidas</label> " +
+        "                <input type='radio' name='Tipos' value='PME de 30 até 99 vidas' /> " +
+        "            </div> " +
+        "     </div> " +
+        "     </div> ");
     document.getElementById('hiddenQtdDePlanos').value++;
 }
 
@@ -295,7 +312,7 @@ function mtdOrganizarIDsTabelaDespesas() {
 }
 
 function RetornarTipo() {
-    var Tipos = document.getElementsByName('Tipo');
+    var Tipos = document.getElementsByName('ObjComissaoMOD.Tipo');
     var Tipo = "";
     for (var i = 0; i < Tipos.length; i++) {
         if (Tipos[i].checked) {
@@ -309,26 +326,27 @@ function RetornarTipo() {
 function mtdAddRowComissao() {
     var Tipo = RetornarTipo();
     var Comissao = document.getElementById('Comissao').value;
-    var NumeroDaParcela = document.getElementById('NumeroDaParcela').value;
-
-    $("#TabelaComissoes").append("<tr id='tr0' > " +
-        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
-        "                       <input data-val='true' data-val-required='The Id field is required.' name='Tipos' type='hidden' value='" + Tipo + "'> " +
-        Tipo +
-        "                   </td> " +
-        "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
-        "                       <input data-val='true' data-val-required='The Id field is required.' name='NumeroDaParcela' type='hidden' value='" + NumeroDaParcela + "'> " +
-        NumeroDaParcela +
-        "                   </td> " +
-        "                   <td class='col-lg-3 col-md-3 col-sm-3'> " +
-        "                       <input data-val='true' data-val-required='The Id field is required.' name='Comissao' type='hidden' value='" + Comissao + "'> " +
-        Comissao +
-        "                   </td> " +
-        "                   <td class='col-lg-1 col-md-1 col-sm-1'> " +
-        "                       <span style='cursor:pointer' name='btnRemoverComissao' id='btnRemoverComissao' onclick='mtdRemoveRowComissao('tr0')' class='glyphicon glyphicon-remove-circle'></span>" +
-        "                   </td> " +
-        "               </tr> ");
-    mtdOrganizarIDsTabelaComissao();
+    var NumeroDaParcela = document.getElementById('NumeroParcela').value;
+    if (Comissao !== "" && Tipo !== "" && NumeroDaParcela !== "") {
+        $("#TabelaComissoes").append("<tr id='tr0' > " +
+            "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+            "                       <input data-val='true' data-val-required='The Id field is required.' name='Tipos' type='hidden' value='" + Tipo + "'> " +
+            Tipo +
+            "                   </td> " +
+            "                   <td class='col-lg-4 col-md-4 col-sm-4'> " +
+            "                       <input data-val='true' data-val-required='The Id field is required.' name='NumeroDaParcela' type='hidden' value='" + NumeroDaParcela + "'> " +
+            NumeroDaParcela +
+            "                   </td> " +
+            "                   <td class='col-lg-3 col-md-3 col-sm-3'> " +
+            "                       <input data-val='true' data-val-required='The Id field is required.' name='Comissao' type='hidden' value='" + Comissao + "'> " +
+            Comissao +
+            "                   </td> " +
+            "                   <td class='col-lg-1 col-md-1 col-sm-1'> " +
+            "                       <span style='cursor:pointer' name='btnRemoverComissao' id='btnRemoverComissao' onclick='mtdRemoveRowComissao('tr0')' class='glyphicon glyphicon-remove-circle'></span>" +
+            "                   </td> " +
+            "               </tr> ");
+        mtdOrganizarIDsTabelaComissao();
+    }
 }
 
 function mtdOrganizarIDsTabelaComissao() {

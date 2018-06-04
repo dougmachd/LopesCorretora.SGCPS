@@ -11,67 +11,67 @@ namespace LopesCorretora.SGCPS.Models
         public int Id { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
         [Display(Name = "Titular", Description = "Titular, pessoa fisica")]
         #endregion
         public string Titular { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
         [Display(Name = "CPF", Description = "CPF, pessoa fisica")]
         #endregion
         public string CPF { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "RG", Description = "RG, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "RG", Description = "RG, pessoa física")]
         #endregion
         public string RG { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Estado civil", Description = "Estado civil, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Estado civil", Description = "Estado civil, pessoa física")]
         #endregion
         public string EstadoCivil { get; set; }
 
         #region DataAnnotations
-        [Display(Name = "E-mail", Description = "E-mail, pessoa fisica")]
+		[Display(Name = "E-mail", Description = "E-mail, pessoa física")]
         #endregion
         public string Email { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Mae do titular", Description = "Mae do titular. Pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Mae do titular", Description = "Mae do titular. Pessoa física")]
         #endregion
         public string MaeDoTitular { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Responsavel geral", Description = "Responsavel geral,  pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Responsável geral", Description = "Responsavel geral,  pessoa física")]
         #endregion
         public string ResponsavelGeral { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Numero do SUS", Description = "Numero do SUS, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Número do SUS", Description = "Numero do SUS, pessoa física")]
         #endregion
         public int? NumeroDoSUS { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Observacoes", Description = "Observacoes, pessoa fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Observações", Description = "Observacoes, pessoa física")]
         #endregion
         public string Observacoes { get; set; }
 
         #region DataAnnotations
-        //[Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Documentos (anexo)", Description = "Documentos (anexo), pessoa fisica")]
+        //[Required(ErrorMessage = "* Campo obrigatório")]
+        [Display(Name = "Documentos (anexo)", Description = "Documentos (anexo), pessoa física")]
         #endregion
         public string DocumentosAnexo { get; set; }
 
         #region DataAnnotations
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Data de nascimente", Description = "Data de nascimente, fisica")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+		[Display(Name = "Data de nascimente", Description = "Data de nascimente, física")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         #endregion
         public DateTime? DataDeNascimento { get; set; }

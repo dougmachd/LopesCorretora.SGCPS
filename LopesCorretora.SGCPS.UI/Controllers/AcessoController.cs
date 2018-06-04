@@ -25,7 +25,6 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             HttpContext.Session.GetString("EmailDoUsuario");
             if (usuarioMOD != null)
             {
-                HttpContext.Session.SetString("EmailDoUsuario", "dfghjk");
                 HttpContext.Session.SetString("EmailDoUsuario", usuarioMOD.Email.ToString());
                 HttpContext.Session.SetString("IdDoUsuario", usuarioMOD.Id.ToString());
                 HttpContext.Session.SetString("NomeDoUsuario", usuarioMOD.Nome.ToString());

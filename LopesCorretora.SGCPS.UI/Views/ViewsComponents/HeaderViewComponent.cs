@@ -13,7 +13,7 @@ namespace LopesCorretora.SGCPS.UI.Views.ViewsComponents
     {
         public IViewComponentResult Invoke()
         {
-            ViewBag.NomeUsuario = HttpContext.Session.GetString("NomeDoUsuario").ToString();
+            ViewBag.NomeUsuario = HttpContext.Session.GetString("NomeDoUsuario");
             return View("Header.cshtml");
         }
     }

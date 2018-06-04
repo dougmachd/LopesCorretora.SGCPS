@@ -89,17 +89,17 @@
             </div>
         </div>
         <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@Model.PercentagemEntrada aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemEntrada%">
+            <div class="@ViewBag.ClassFirst" role="progressbar" aria-valuenow=@Model.PercentagemEntrada aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemEntrada%">
                 <span> R$@Model.TotalEntrada (Entrada)</span>
             </div>
         </div>
         <div class="progress">
-            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow=@Model.PercentagemSaida aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemSaida%">
+            <div class="@ViewBag.ClassSecond" role="progressbar" aria-valuenow=@Model.PercentagemSaida aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemSaida%">
                 <span> R$@Model.TotalSaida (Saida)</span>
             </div>
         </div>
         <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=@Model.PercentagemDiferenca aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemDiferenca%">
+            <div class="@ViewBag.ClassThird" role="progressbar" aria-valuenow=@Model.PercentagemDiferenca aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentagemDiferenca%">
                 <span> R$@Model.DiferencaNoPeriodo (Diferenca)</span>
             </div>
         </div>

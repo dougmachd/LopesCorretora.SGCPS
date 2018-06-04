@@ -33,14 +33,14 @@ namespace LopesCorretora.SGCPS.UI.Controllers
 
         [HttpPost]
         public IActionResult Cadastrar(CadastrarPessoaJuridicaVM cadastrarPessoaJuridicaVM, IFormFile anexo,
-            List<int> NumeroDeBeneficiarios = null, List<int> PlanoId = null)
+            List<int> NumeroDeBeneficiarios = null, List<string> Categoria = null, List<string> Tipos = null)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].UsuarioId =
-                        Convert.ToInt32(HttpContext.Session.GetInt32("IdUsuario"));
+                    cadastrarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].UsuarioId =
+                        Convert.ToInt32(HttpContext.Session.GetInt32("IdDoUsuario"));
 
                     #region Salvar Anexo
                     if (anexo != null)
@@ -77,7 +77,7 @@ namespace LopesCorretora.SGCPS.UI.Controllers
                     ViewBag.Style = "display:block; text-align:center; margin-top: 5%";
                     ViewBag.Class = "alert alert-success";
                     #endregion
-                    return View(PessoaJuridicaBUS.CadastrarPessoaJuridica(cadastrarPessoaJuridicaVM, NumeroDeBeneficiarios, PlanoId));
+                    return View(PessoaJuridicaBUS.CadastrarPessoaJuridica(cadastrarPessoaJuridicaVM, NumeroDeBeneficiarios, Categoria, Tipos));
                 }
                 catch (Exception)
                 {
@@ -138,8 +138,8 @@ namespace LopesCorretora.SGCPS.UI.Controllers
             {
                 try
                 {
-                    alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMOD[0].UsuarioId =
-                        Convert.ToInt32(HttpContext.Session.GetInt32("IdUsuario"));
+                    alterarPessoaJuridicaVM.ListPlanoPessoaJuridicaMODs[0].UsuarioId =
+                        Convert.ToInt32(HttpContext.Session.GetInt32("IdDoUsuario"));
 
                     #region Salvar Anexo
                     if (anexo != null)

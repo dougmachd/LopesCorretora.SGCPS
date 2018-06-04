@@ -6,7 +6,7 @@ namespace LopesCorretora.SGCPS.Models
     {
         #region DataAnnotations
         [Key]
-        [Required(ErrorMessage ="* Campo obrigatorio")]
+        [Required(ErrorMessage ="* Campo obrigatório")]
         #endregion
         public int Id { get; set; }
         public string Status { get; set; }

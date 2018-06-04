@@ -58,6 +58,11 @@
                 </li>
 
                 <li>
+                    @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 02 até 29 vidas")
+                    @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 02 até 29 vidas")
+                </li>
+
+                <li>
                     @Html.RadioButtonFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 30 até 99 vidas")
                     @Html.LabelFor(comissaoVM => comissaoVM.ObjComissaoMOD.Tipo, "PME de 30 até 99 vidas")
                 </li>
@@ -65,7 +70,27 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
-        <button type="submit" class="btn btn-default" id="btnAddComissao">Adicionar</button>
+        <button onclick="mtdAddRowComissao()" type="button" class="btn btn-default" id="btnAddComissao">Adicionar +</button>
+    </div>
+
+    <hr />
+
+    <div style="margin-top:5%" class="row">
+        <table id="TabelaComissoes" class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="col-lg-4 col-md-4 col-sm-4">Tipo</th>
+                    <th class="col-lg-4 col-md-4 col-sm-4">Numero da parcela</th>
+                    <th class="col-lg-3 col-md-3 col-sm-3">Comissao</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="col-xs-1 col-sm-1 col-md-1 pull-right">
+            <button id="submitCadastrarPlano" style="margin-top: 25px" type="submit" class="btn btn-default"> Cadastrar </button>
+        </div>
     </div>
 }
 

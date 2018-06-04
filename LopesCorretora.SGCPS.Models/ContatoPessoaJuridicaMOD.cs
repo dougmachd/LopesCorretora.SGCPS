@@ -12,8 +12,8 @@ namespace LopesCorretora.SGCPS.Models
         #region DataAnnotations
         [MinLength(10)]
         [MaxLength(12)]
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        [Display(Name = "Contato", Description = "Numero de contato")]
+        [Required(ErrorMessage = "* Campo obrigatório")]
+        [Display(Name = "Contato", Description = "Número de contato")]
         #endregion
         public string Contato { get; set; }
 
